@@ -1,0 +1,93 @@
+{
+  "device_policy": "cpu_only",
+  "backends": [
+    {
+      "name": "vosk_small",
+      "project": "Vosk",
+      "license": "Apache-2.0",
+      "device": "cpu",
+      "task_types": ["asr", "cross_channel_asr", "low_resource_asr", "transcription"],
+      "model_examples": ["vosk-model-small-cn-0.22", "vosk-model-small-en-us-0.15"],
+      "python_packages": ["vosk"],
+      "notes": "Offline small ASR models, suitable for CPU and embedded deployment."
+    },
+    {
+      "name": "sherpa_onnx_int8",
+      "project": "sherpa-onnx",
+      "license": "Apache-2.0",
+      "device": "cpu",
+      "task_types": ["asr", "cross_channel_asr", "low_resource_asr", "code_switch_asr", "transcription"],
+      "model_examples": ["streaming-zipformer-small-int8", "paraformer-zh-small"],
+      "python_packages": ["sherpa-onnx"],
+      "notes": "ONNX/int8 streaming ASR models, good fit for CPU-only containers."
+    },
+    {
+      "name": "whisper_tiny_cpu",
+      "project": "OpenAI Whisper",
+      "license": "MIT",
+      "device": "cpu",
+      "task_types": ["asr", "code_switch_asr", "speech_translation", "transcription"],
+      "model_examples": ["tiny", "tiny.en", "base"],
+      "python_packages": ["openai-whisper"],
+      "notes": "Small multilingual ASR and speech translation backend; CPU runtime is slower but usable for short assets."
+    },
+    {
+      "name": "rnnoise",
+      "project": "RNNoise",
+      "license": "BSD-3-Clause",
+      "device": "cpu",
+      "task_types": ["noise_enhancement"],
+      "python_packages": [],
+      "notes": "Very small RNN speech denoising model suitable for CPU."
+    },
+    {
+      "name": "deepfilternet_cpu",
+      "project": "DeepFilterNet",
+      "license": "MIT/Apache-style project license",
+      "device": "cpu",
+      "task_types": ["noise_enhancement"],
+      "python_packages": ["deepfilternet"],
+      "notes": "Higher quality speech enhancement backend, CPU-capable for small validation runs."
+    },
+    {
+      "name": "speechbrain_ecapa",
+      "project": "SpeechBrain ECAPA-TDNN",
+      "license": "Apache-2.0",
+      "device": "cpu",
+      "task_types": ["speaker_verification"],
+      "model_examples": ["speechbrain/spkrec-ecapa-voxceleb"],
+      "python_packages": ["speechbrain"],
+      "notes": "Speaker verification embedding backend."
+    },
+    {
+      "name": "minilm_intent",
+      "project": "Sentence Transformers / MiniLM",
+      "license": "Apache-2.0",
+      "device": "cpu",
+      "task_types": ["speech_interaction"],
+      "model_examples": ["sentence-transformers/all-MiniLM-L6-v2"],
+      "python_packages": ["sentence-transformers"],
+      "notes": "Small text embedding model for ASR text intent classification."
+    },
+    {
+      "name": "opus_mt_tiny",
+      "project": "Helsinki-NLP OPUS-MT",
+      "license": "MIT",
+      "device": "cpu",
+      "task_types": ["speech_translation"],
+      "model_examples": ["Helsinki-NLP/opus-mt-zh-en"],
+      "python_packages": ["transformers", "sentencepiece"],
+      "notes": "Small text translation backend used after ASR."
+    },
+    {
+      "name": "pycorrector_kenlm",
+      "project": "pycorrector",
+      "license": "Apache-2.0",
+      "device": "cpu",
+      "task_types": ["speech_correction"],
+      "python_packages": ["pycorrector"],
+      "notes": "CPU-friendly ASR text correction backend with rule, lexicon, KenLM, and small neural options."
+    }
+  ]
+}
+

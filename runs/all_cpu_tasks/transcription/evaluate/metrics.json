@@ -1,0 +1,18 @@
+{
+  "task_type": "transcription",
+  "sample_count": 1,
+  "channel_count": 1,
+  "wer": 0.0,
+  "cer": 0.0,
+  "channel_metrics": {
+    "mic_1": {
+      "sample_count": 1,
+      "wer": 0.0,
+      "cer": 0.0
+    }
+  },
+  "backend": "cpu_reference",
+  "device": "cpu",
+  "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/transcription/train",
+  "status": "evaluated"
+}

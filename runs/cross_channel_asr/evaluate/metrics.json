@@ -1,0 +1,16 @@
+{
+  "task_type": "cross_channel_asr",
+  "sample_count": 1,
+  "channel_count": 1,
+  "wer": 0.0,
+  "cer": 0.0,
+  "channel_metrics": {
+    "mic_1": {
+      "sample_count": 1,
+      "wer": 0.0,
+      "cer": 0.0
+    }
+  },
+  "model_dir": "/home/code/voc_train/runs/cross_channel_asr/train",
+  "status": "evaluated"
+}

@@ -1,0 +1,16 @@
+{
+  "task_type": "transcription",
+  "sample_count": 1,
+  "channel_count": 1,
+  "channels": {
+    "mic_1": 1
+  },
+  "languages": {
+    "zh": 1
+  },
+  "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
+  "backend": "cpu_reference",
+  "device": "cpu",
+  "training_mode": "task_specific_reference_model",
+  "status": "trained"
+}

@@ -1,0 +1,5 @@
+{
+  "backend": "cpu_reference",
+  "device": "cpu",
+  "task_count": 10
+}

@@ -1,0 +1,7 @@
+{
+  "loss": 0.0,
+  "snr_improvement": 1.0,
+  "paired_clean_noisy_samples": 1,
+  "channel_count": 1,
+  "sample_count": 1
+}

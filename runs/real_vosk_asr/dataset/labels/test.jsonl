@@ -1,0 +1,10 @@
+{"utt_id": "real_vosk_001", "task_type": "asr", "text": "one zero zero one nine oh two", "language": "en", "speaker_id": "pyttsx3_voice", "channel": "tts_mono", "audio": "audio/test/real_vosk_001.wav"}
+{"utt_id": "real_vosk_002", "task_type": "asr", "text": "open the training dashboard", "language": "en", "speaker_id": "pyttsx3_voice", "channel": "tts_mono", "audio": "audio/test/real_vosk_002.wav"}
+{"utt_id": "real_vosk_003", "task_type": "asr", "text": "start speech recognition training", "language": "en", "speaker_id": "pyttsx3_voice", "channel": "tts_mono", "audio": "audio/test/real_vosk_003.wav"}
+{"utt_id": "real_vosk_004", "task_type": "asr", "text": "check the model evaluation report", "language": "en", "speaker_id": "pyttsx3_voice", "channel": "tts_mono", "audio": "audio/test/real_vosk_004.wav"}
+{"utt_id": "real_vosk_005", "task_type": "asr", "text": "deploy the voice correction service", "language": "en", "speaker_id": "pyttsx3_voice", "channel": "tts_mono", "audio": "audio/test/real_vosk_005.wav"}
+{"utt_id": "real_vosk_006", "task_type": "asr", "text": "query the speaker verification result", "language": "en", "speaker_id": "pyttsx3_voice", "channel": "tts_mono", "audio": "audio/test/real_vosk_006.wav"}
+{"utt_id": "real_vosk_007", "task_type": "asr", "text": "run the noise enhancement test", "language": "en", "speaker_id": "pyttsx3_voice", "channel": "tts_mono", "audio": "audio/test/real_vosk_007.wav"}
+{"utt_id": "real_vosk_008", "task_type": "asr", "text": "translate the speech into english", "language": "en", "speaker_id": "pyttsx3_voice", "channel": "tts_mono", "audio": "audio/test/real_vosk_008.wav"}
+{"utt_id": "real_vosk_009", "task_type": "asr", "text": "record the meeting transcript", "language": "en", "speaker_id": "pyttsx3_voice", "channel": "tts_mono", "audio": "audio/test/real_vosk_009.wav"}
+{"utt_id": "real_vosk_010", "task_type": "asr", "text": "switch to channel number two", "language": "en", "speaker_id": "pyttsx3_voice", "channel": "tts_mono", "audio": "audio/test/real_vosk_010.wav"}

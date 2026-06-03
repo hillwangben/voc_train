@@ -1,0 +1,343 @@
+{
+  "backend": "cpu_reference",
+  "device": "cpu",
+  "tasks": [
+    {
+      "task_type": "asr",
+      "train": {
+        "task_type": "asr",
+        "sample_count": 1,
+        "channel_count": 1,
+        "channels": {
+          "mic_1": 1
+        },
+        "languages": {
+          "zh": 1
+        },
+        "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
+        "backend": "cpu_reference",
+        "device": "cpu",
+        "training_mode": "task_specific_reference_model",
+        "status": "trained"
+      },
+      "evaluate": {
+        "task_type": "asr",
+        "sample_count": 1,
+        "channel_count": 1,
+        "wer": 0.0,
+        "cer": 0.0,
+        "channel_metrics": {
+          "mic_1": {
+            "sample_count": 1,
+            "wer": 0.0,
+            "cer": 0.0
+          }
+        },
+        "backend": "cpu_reference",
+        "device": "cpu",
+        "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/asr/train",
+        "status": "evaluated"
+      }
+    },
+    {
+      "task_type": "noise_enhancement",
+      "train": {
+        "task_type": "noise_enhancement",
+        "sample_count": 1,
+        "channel_count": 1,
+        "channels": {
+          "mic_1": 1
+        },
+        "languages": {
+          "zh": 1
+        },
+        "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
+        "backend": "cpu_reference",
+        "device": "cpu",
+        "training_mode": "task_specific_reference_model",
+        "status": "trained"
+      },
+      "evaluate": {
+        "task_type": "noise_enhancement",
+        "sample_count": 1,
+        "channel_count": 1,
+        "snr_improvement": 1.0,
+        "pesq_proxy": 1.0,
+        "stoi_proxy": 1.0,
+        "backend": "cpu_reference",
+        "device": "cpu",
+        "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/noise_enhancement/train",
+        "status": "evaluated"
+      }
+    },
+    {
+      "task_type": "cross_channel_asr",
+      "train": {
+        "task_type": "cross_channel_asr",
+        "sample_count": 1,
+        "channel_count": 1,
+        "channels": {
+          "mic_array_2": 1
+        },
+        "languages": {
+          "zh": 1
+        },
+        "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
+        "backend": "cpu_reference",
+        "device": "cpu",
+        "training_mode": "task_specific_reference_model",
+        "status": "trained"
+      },
+      "evaluate": {
+        "task_type": "cross_channel_asr",
+        "sample_count": 1,
+        "channel_count": 1,
+        "wer": 0.0,
+        "cer": 0.0,
+        "channel_metrics": {
+          "mic_array_2": {
+            "sample_count": 1,
+            "wer": 0.0,
+            "cer": 0.0
+          }
+        },
+        "backend": "cpu_reference",
+        "device": "cpu",
+        "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/cross_channel_asr/train",
+        "status": "evaluated"
+      }
+    },
+    {
+      "task_type": "low_resource_asr",
+      "train": {
+        "task_type": "low_resource_asr",
+        "sample_count": 1,
+        "channel_count": 1,
+        "channels": {
+          "mic_1": 1
+        },
+        "languages": {
+          "ug": 1
+        },
+        "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
+        "backend": "cpu_reference",
+        "device": "cpu",
+        "training_mode": "task_specific_reference_model",
+        "status": "trained"
+      },
+      "evaluate": {
+        "task_type": "low_resource_asr",
+        "sample_count": 1,
+        "channel_count": 1,
+        "wer": 0.0,
+        "cer": 0.0,
+        "channel_metrics": {
+          "mic_1": {
+            "sample_count": 1,
+            "wer": 0.0,
+            "cer": 0.0
+          }
+        },
+        "backend": "cpu_reference",
+        "device": "cpu",
+        "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/low_resource_asr/train",
+        "status": "evaluated"
+      }
+    },
+    {
+      "task_type": "code_switch_asr",
+      "train": {
+        "task_type": "code_switch_asr",
+        "sample_count": 1,
+        "channel_count": 1,
+        "channels": {
+          "mic_1": 1
+        },
+        "languages": {
+          "zh-en": 1
+        },
+        "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
+        "backend": "cpu_reference",
+        "device": "cpu",
+        "training_mode": "task_specific_reference_model",
+        "status": "trained"
+      },
+      "evaluate": {
+        "task_type": "code_switch_asr",
+        "sample_count": 1,
+        "channel_count": 1,
+        "wer": 0.0,
+        "cer": 0.0,
+        "channel_metrics": {
+          "mic_1": {
+            "sample_count": 1,
+            "wer": 0.0,
+            "cer": 0.0
+          }
+        },
+        "backend": "cpu_reference",
+        "device": "cpu",
+        "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/code_switch_asr/train",
+        "status": "evaluated"
+      }
+    },
+    {
+      "task_type": "speaker_verification",
+      "train": {
+        "task_type": "speaker_verification",
+        "sample_count": 1,
+        "channel_count": 1,
+        "channels": {
+          "mic_1": 1
+        },
+        "languages": {
+          "zh": 1
+        },
+        "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
+        "backend": "cpu_reference",
+        "device": "cpu",
+        "training_mode": "task_specific_reference_model",
+        "status": "trained"
+      },
+      "evaluate": {
+        "task_type": "speaker_verification",
+        "sample_count": 1,
+        "channel_count": 1,
+        "eer_proxy": 0.0,
+        "verification_accuracy": 1.0,
+        "backend": "cpu_reference",
+        "device": "cpu",
+        "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/speaker_verification/train",
+        "status": "evaluated"
+      }
+    },
+    {
+      "task_type": "speech_interaction",
+      "train": {
+        "task_type": "speech_interaction",
+        "sample_count": 1,
+        "channel_count": 1,
+        "channels": {
+          "mic_1": 1
+        },
+        "languages": {
+          "zh": 1
+        },
+        "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
+        "backend": "cpu_reference",
+        "device": "cpu",
+        "training_mode": "task_specific_reference_model",
+        "status": "trained"
+      },
+      "evaluate": {
+        "task_type": "speech_interaction",
+        "sample_count": 1,
+        "channel_count": 1,
+        "intent_accuracy": 1.0,
+        "slot_f1": 1.0,
+        "backend": "cpu_reference",
+        "device": "cpu",
+        "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/speech_interaction/train",
+        "status": "evaluated"
+      }
+    },
+    {
+      "task_type": "speech_translation",
+      "train": {
+        "task_type": "speech_translation",
+        "sample_count": 1,
+        "channel_count": 1,
+        "channels": {
+          "mic_1": 1
+        },
+        "languages": {
+          "zh": 1
+        },
+        "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
+        "backend": "cpu_reference",
+        "device": "cpu",
+        "training_mode": "task_specific_reference_model",
+        "status": "trained"
+      },
+      "evaluate": {
+        "task_type": "speech_translation",
+        "sample_count": 1,
+        "channel_count": 1,
+        "bleu_proxy": 1.0,
+        "chrf_proxy": 1.0,
+        "backend": "cpu_reference",
+        "device": "cpu",
+        "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/speech_translation/train",
+        "status": "evaluated"
+      }
+    },
+    {
+      "task_type": "transcription",
+      "train": {
+        "task_type": "transcription",
+        "sample_count": 1,
+        "channel_count": 1,
+        "channels": {
+          "mic_1": 1
+        },
+        "languages": {
+          "zh": 1
+        },
+        "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
+        "backend": "cpu_reference",
+        "device": "cpu",
+        "training_mode": "task_specific_reference_model",
+        "status": "trained"
+      },
+      "evaluate": {
+        "task_type": "transcription",
+        "sample_count": 1,
+        "channel_count": 1,
+        "wer": 0.0,
+        "cer": 0.0,
+        "channel_metrics": {
+          "mic_1": {
+            "sample_count": 1,
+            "wer": 0.0,
+            "cer": 0.0
+          }
+        },
+        "backend": "cpu_reference",
+        "device": "cpu",
+        "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/transcription/train",
+        "status": "evaluated"
+      }
+    },
+    {
+      "task_type": "speech_correction",
+      "train": {
+        "task_type": "speech_correction",
+        "sample_count": 1,
+        "channel_count": 1,
+        "channels": {
+          "mic_1": 1
+        },
+        "languages": {
+          "zh": 1
+        },
+        "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
+        "backend": "cpu_reference",
+        "device": "cpu",
+        "training_mode": "task_specific_reference_model",
+        "status": "trained"
+      },
+      "evaluate": {
+        "task_type": "speech_correction",
+        "sample_count": 1,
+        "channel_count": 1,
+        "correction_precision": 1.0,
+        "correction_recall": 1.0,
+        "correction_f1": 1.0,
+        "backend": "cpu_reference",
+        "device": "cpu",
+        "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/speech_correction/train",
+        "status": "evaluated"
+      }
+    }
+  ]
+}

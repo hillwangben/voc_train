@@ -1,0 +1,93 @@
+{
+  "version_info": {
+    "device_policy": "cpu_only",
+    "default_backend": "cpu_reference",
+    "open_source_backend_catalog": "docs/open_source_cpu_models.json",
+    "tasks": [
+      "asr",
+      "noise_enhancement",
+      "cross_channel_asr",
+      "low_resource_asr",
+      "code_switch_asr",
+      "speaker_verification",
+      "speech_interaction",
+      "speech_translation",
+      "transcription",
+      "speech_correction"
+    ],
+    "train_config": {
+      "parameters": {
+        "backend": "cpu_reference",
+        "epochs": 1,
+        "batch_size": 1,
+        "sample_rate": 16000
+      },
+      "environment_variables": {
+        "TZ": "Asia/Shanghai"
+      },
+      "resources": {
+        "cpu": 2,
+        "gpu": 0,
+        "memory": 4
+      }
+    },
+    "evaluate_config": {
+      "parameters": {
+        "backend": "cpu_reference",
+        "metric_set": "task_specific"
+      },
+      "environment_variables": {
+        "TZ": "Asia/Shanghai"
+      },
+      "resources": {
+        "cpu": 2,
+        "gpu": 0,
+        "memory": 4
+      }
+    },
+    "metrics": {
+      "asr": {
+        "wer": 0.0,
+        "cer": 0.0
+      },
+      "noise_enhancement": {
+        "snr_improvement": 1.0,
+        "pesq_proxy": 1.0,
+        "stoi_proxy": 1.0
+      },
+      "cross_channel_asr": {
+        "wer": 0.0,
+        "cer": 0.0
+      },
+      "low_resource_asr": {
+        "wer": 0.0,
+        "cer": 0.0
+      },
+      "code_switch_asr": {
+        "wer": 0.0,
+        "cer": 0.0
+      },
+      "speaker_verification": {
+        "eer_proxy": 0.0,
+        "verification_accuracy": 1.0
+      },
+      "speech_interaction": {
+        "intent_accuracy": 1.0,
+        "slot_f1": 1.0
+      },
+      "speech_translation": {
+        "bleu_proxy": 1.0,
+        "chrf_proxy": 1.0
+      },
+      "transcription": {
+        "wer": 0.0,
+        "cer": 0.0
+      },
+      "speech_correction": {
+        "correction_precision": 1.0,
+        "correction_recall": 1.0,
+        "correction_f1": 1.0
+      }
+    }
+  }
+}

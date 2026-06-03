@@ -1,0 +1,12 @@
+{
+  "task_type": "noise_enhancement",
+  "sample_count": 1,
+  "channel_count": 1,
+  "snr_improvement": 1.0,
+  "pesq_proxy": 1.0,
+  "stoi_proxy": 1.0,
+  "backend": "cpu_reference",
+  "device": "cpu",
+  "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/noise_enhancement/train",
+  "status": "evaluated"
+}

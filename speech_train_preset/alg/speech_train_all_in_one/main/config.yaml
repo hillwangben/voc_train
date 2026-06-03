@@ -1,0 +1,86 @@
+train:
+  code_dir: "./"
+  script_path: "./train.sh"
+  command: ["bash", "train.sh"]
+  parameters:
+    task_type: "asr"
+    backend: "cpu_reference"
+    base_model: "speech_train_base-model"
+    epochs: 20
+    batch_size: 8
+    learning_rate: 0.0001
+    sample_rate: 16000
+    language: "zh"
+    use_pretrained: true
+  environment_variables:
+    TZ: "Asia/Shanghai"
+    PYTHONUNBUFFERED: "1"
+  resources:
+    cpu: 4
+    gpu: 0
+    memory: 16
+  data_dir: "/workspace/input"
+  model_dir: "/workspace/model"
+  save_dir: "/workspace/output/train"
+
+evaluate:
+  code_dir: "./"
+  script_path: "./eval.sh"
+  command: ["bash", "eval.sh"]
+  parameters:
+    task_type: "asr"
+    backend: "cpu_reference"
+    metric_set: "default"
+    batch_size: 8
+  environment_variables:
+    TZ: "Asia/Shanghai"
+    PYTHONUNBUFFERED: "1"
+  resources:
+    cpu: 2
+    gpu: 0
+    memory: 8
+  data_dir: "/workspace/input"
+  model_dir: "/workspace/model"
+  save_dir: "/workspace/output/evaluate"
+
+adapt:
+  code_dir: "./"
+  script_path: "./convert.sh"
+  command: ["bash", "convert.sh"]
+  adapt_type: "format_transfer"
+  parameters:
+    task_type: "asr"
+    backend: "cpu_reference"
+    target_model: "onnx"
+    opset: 17
+  environment_variables:
+    TZ: "Asia/Shanghai"
+    PYTHONUNBUFFERED: "1"
+  resources:
+    cpu: 2
+    gpu: 0
+    memory: 8
+  data_dir: "/workspace/input"
+  model_dir: "/workspace/model"
+  save_dir: "/workspace/output/adapt"
+
+service:
+  code_dir: "./"
+  script_path: "./service.sh"
+  command: ["bash", "service.sh"]
+  parameters:
+    task_type: "asr"
+    backend: "cpu_reference"
+    host: "0.0.0.0"
+    port: 8000
+  environment_variables:
+    TZ: "Asia/Shanghai"
+    PYTHONUNBUFFERED: "1"
+  resources:
+    cpu: 2
+    gpu: 0
+    memory: 8
+  model_dir: "/workspace/model"
+  ports:
+    - name: api
+      port: 8000

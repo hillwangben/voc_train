@@ -1,0 +1,38 @@
+# 顶层压缩包（内容已存在于 speech_train_preset/ 内）
+*.zip
+*.tar.gz
+*.tar.bz2
+*.7z
+
+# 原始下载目录（模型已解压到 speech_train_preset/model/real_cpu_models/）
+downloads/
+
+# IDE 工具残留（空目录）
+.agents/
+.codex/
+.idea/
+.vscode/
+.DS_Store
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+.Python
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# 虚拟环境
+.venv/
+venv/
+env/
+
+# 日志和临时
+*.log
+*.tmp
+*.swp
+*.bak

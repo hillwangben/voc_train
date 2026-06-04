@@ -1,9 +1,0 @@
-{
-  "task_type": "speaker_verification",
-  "backend": "speechbrain_ecapa_voxceleb",
-  "open_source": true,
-  "device": "cpu",
-  "status": "attempted",
-  "sample_count": 2,
-  "blocked_reason": "SpeechBrain and CPU torch are installed. ECAPA model loading is skipped in the bounded integration script because partial HuggingFace cache can block; run a dedicated speaker verification script after caching model weights."
-}

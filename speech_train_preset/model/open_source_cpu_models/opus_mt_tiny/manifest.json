@@ -1,0 +1,27 @@
+{
+  "backend_name": "opus_mt_tiny",
+  "project": "Helsinki-NLP OPUS-MT",
+  "freeze_status": "bundled",
+  "device": "cpu",
+  "task_types": [
+    "speech_translation"
+  ],
+  "model_examples": [
+    "Helsinki-NLP/opus-mt-zh-en"
+  ],
+  "python_packages": [
+    "transformers",
+    "sentencepiece"
+  ],
+  "bundled_model_path": "model/real_cpu_models/Helsinki-NLP-opus-mt-en-zh",
+  "engineering_locations": [
+    "model/real_cpu_models/Helsinki-NLP-opus-mt-en-zh",
+    "env/speech_train_all-env/requirements-cpu-open-source.txt",
+    "scripts/run_real_remaining_tasks.py",
+    "docs/open_source_cpu_models.json",
+    "docs/训练平台集成使用说明.md"
+  ],
+  "integration_note": "OPUS-MT 英中翻译权重和 tokenizer 已缓存到工程内，匹配当前语音翻译数据集的 en -> zh 方向。",
+  "offline_cached": true,
+  "offline_cache_path": "model/real_cpu_models/Helsinki-NLP-opus-mt-en-zh"
+}

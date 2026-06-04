@@ -1,9 +1,11 @@
 {
   "name": "speech_train_sample-dataset",
-  "version": "v1",
+  "version": "v2-50-per-task",
   "sample_rate": 16000,
   "device_policy": "cpu_only",
   "task_count": 10,
+  "samples_per_task": 50,
+  "total_samples": 500,
   "tasks": [
     "asr",
     "noise_enhancement",
@@ -16,5 +18,5 @@
     "transcription",
     "speech_correction"
   ],
-  "description": "Synthetic but valid wav/jsonl data covering ten speech vertical training tasks."
+  "description": "Synthetic but valid wav/jsonl data with 50 samples per speech vertical training task."
 }

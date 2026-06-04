@@ -1,0 +1,30 @@
+{
+  "backend_name": "vosk_small",
+  "project": "Vosk",
+  "freeze_status": "bundled",
+  "device": "cpu",
+  "task_types": [
+    "asr",
+    "cross_channel_asr",
+    "low_resource_asr",
+    "transcription"
+  ],
+  "model_examples": [
+    "vosk-model-small-cn-0.22",
+    "vosk-model-small-en-us-0.15"
+  ],
+  "python_packages": [
+    "vosk"
+  ],
+  "bundled_model_path": "model/real_cpu_models/vosk-model-small-en-us-0.15",
+  "engineering_locations": [
+    "model/real_cpu_models/vosk-model-small-en-us-0.15",
+    "scripts/run_real_vosk_asr.py",
+    "scripts/run_real_remaining_tasks.py",
+    "env/speech_train_all-env/requirements-cpu-open-source.txt",
+    "docs/训练平台集成使用说明.md"
+  ],
+  "integration_note": "Vosk small English 模型已随交付包保留，可用于 ASR、跨信道 ASR、小语种 ASR 和转写类任务的真实 CPU 推理替换。",
+  "offline_cached": true,
+  "offline_cache_path": "model/real_cpu_models/vosk-model-small-en-us-0.15"
+}

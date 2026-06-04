@@ -1,0 +1,25 @@
+{
+  "backend_name": "minilm_intent",
+  "project": "Sentence Transformers / MiniLM",
+  "freeze_status": "bundled",
+  "device": "cpu",
+  "task_types": [
+    "speech_interaction"
+  ],
+  "model_examples": [
+    "sentence-transformers/all-MiniLM-L6-v2"
+  ],
+  "python_packages": [
+    "sentence-transformers"
+  ],
+  "bundled_model_path": "model/real_cpu_models/sentence-transformers-all-MiniLM-L6-v2",
+  "engineering_locations": [
+    "model/real_cpu_models/sentence-transformers-all-MiniLM-L6-v2",
+    "env/speech_train_all-env/requirements-cpu-open-source.txt",
+    "docs/open_source_cpu_models.json",
+    "docs/训练平台集成使用说明.md"
+  ],
+  "integration_note": "MiniLM 权重、tokenizer 和 sentence-transformers 配置已缓存到工程内，可用于语音智能交互任务的意图分类替换。",
+  "offline_cached": true,
+  "offline_cache_path": "model/real_cpu_models/sentence-transformers-all-MiniLM-L6-v2"
+}

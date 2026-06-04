@@ -36,3 +36,11 @@ env/
 *.tmp
 *.swp
 *.bak
+
+# 大型模型权重（超过 GitHub 100MB 硬限制或 50MB 推荐限制，本地保留）
+# 如需在远端分发，请改用 Git LFS 或单独打包到 release 资源
+speech_train_preset/model/real_cpu_models/Helsinki-NLP-opus-mt-en-zh/pytorch_model.bin
+speech_train_preset/model/real_cpu_models/openai-whisper-tiny/pytorch_model.bin
+speech_train_preset/model/real_cpu_models/sentence-transformers-all-MiniLM-L6-v2/pytorch_model.bin
+speech_train_preset/model/real_cpu_models/sherpa-onnx-paraformer-zh-small-2024-03-09/model.int8.onnx
+speech_train_preset/model/real_cpu_models/speechbrain-spkrec-ecapa-voxceleb/embedding_model.ckpt

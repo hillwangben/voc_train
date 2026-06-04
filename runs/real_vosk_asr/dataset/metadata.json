@@ -1,9 +1,0 @@
-{
-  "name": "real_vosk_asr_test",
-  "sample_count": 10,
-  "limit": 10,
-  "task_type": "asr",
-  "backend": "vosk_small_en_us_0_15",
-  "device": "cpu",
-  "source": "pyttsx3 offline TTS generated speech"
-}

@@ -1,9 +1,0 @@
-{
-  "task_type": "noise_enhancement",
-  "backend": "deepfilternet_cpu",
-  "open_source": true,
-  "device": "cpu",
-  "status": "attempted",
-  "sample_count": 1,
-  "blocked_reason": "DeepFilterNet and torchaudio CPU dependencies are installed and CLI help works, but full enhancement inference is skipped in bounded platform integration runs because the CLI call did not return reliably in this environment."
-}

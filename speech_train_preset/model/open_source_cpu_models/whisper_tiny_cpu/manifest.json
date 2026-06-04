@@ -1,0 +1,30 @@
+{
+  "backend_name": "whisper_tiny_cpu",
+  "project": "OpenAI Whisper",
+  "freeze_status": "bundled",
+  "device": "cpu",
+  "task_types": [
+    "asr",
+    "code_switch_asr",
+    "speech_translation",
+    "transcription"
+  ],
+  "model_examples": [
+    "tiny",
+    "tiny.en",
+    "base"
+  ],
+  "python_packages": [
+    "openai-whisper"
+  ],
+  "bundled_model_path": "model/real_cpu_models/openai-whisper-tiny",
+  "engineering_locations": [
+    "model/real_cpu_models/openai-whisper-tiny",
+    "env/speech_train_all-env/requirements-cpu-open-source.txt",
+    "docs/open_source_cpu_models.json",
+    "docs/训练平台集成使用说明.md"
+  ],
+  "integration_note": "Whisper tiny 权重和 tokenizer 已缓存到工程内，可用于 ASR、混合语种识别、语音翻译和转写类任务的 CPU 离线替换。",
+  "offline_cached": true,
+  "offline_cache_path": "model/real_cpu_models/openai-whisper-tiny"
+}

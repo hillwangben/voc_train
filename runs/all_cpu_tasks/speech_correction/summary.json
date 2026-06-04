@@ -1,0 +1,41 @@
+{
+  "task_type": "speech_correction",
+  "backend": "cpu_reference",
+  "device": "cpu",
+  "train": {
+    "task_type": "speech_correction",
+    "sample_count": 50,
+    "channel_count": 4,
+    "channels": {
+      "mic_1": 12,
+      "mic_2": 13,
+      "mic_3": 13,
+      "mic_4": 12
+    },
+    "languages": {
+      "en": 50
+    },
+    "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
+    "backend": "cpu_reference",
+    "device": "cpu",
+    "training_mode": "task_specific_reference_model",
+    "status": "trained"
+  },
+  "evaluate": {
+    "task_type": "speech_correction",
+    "sample_count": 50,
+    "channel_count": 4,
+    "correction_precision": 1.0,
+    "correction_recall": 1.0,
+    "correction_f1": 1.0,
+    "backend": "cpu_reference",
+    "device": "cpu",
+    "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/speech_correction/train",
+    "status": "evaluated"
+  },
+  "paths": {
+    "train_checkpoint": "/home/code/voc_train/runs/all_cpu_tasks/speech_correction/train/checkpoint.json",
+    "train_metrics": "/home/code/voc_train/runs/all_cpu_tasks/speech_correction/train/train_metrics.json",
+    "evaluate_metrics": "/home/code/voc_train/runs/all_cpu_tasks/speech_correction/evaluate/metrics.json"
+  }
+}

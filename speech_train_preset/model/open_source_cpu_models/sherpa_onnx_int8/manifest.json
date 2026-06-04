@@ -1,0 +1,30 @@
+{
+  "backend_name": "sherpa_onnx_int8",
+  "project": "sherpa-onnx",
+  "freeze_status": "bundled",
+  "device": "cpu",
+  "task_types": [
+    "asr",
+    "cross_channel_asr",
+    "low_resource_asr",
+    "code_switch_asr",
+    "transcription"
+  ],
+  "model_examples": [
+    "streaming-zipformer-small-int8",
+    "paraformer-zh-small"
+  ],
+  "python_packages": [
+    "sherpa-onnx"
+  ],
+  "bundled_model_path": "model/real_cpu_models/sherpa-onnx-paraformer-zh-small-2024-03-09",
+  "engineering_locations": [
+    "model/real_cpu_models/sherpa-onnx-paraformer-zh-small-2024-03-09",
+    "env/speech_train_all-env/requirements-cpu-open-source.txt",
+    "docs/open_source_cpu_models.json",
+    "docs/训练平台集成使用说明.md"
+  ],
+  "integration_note": "已固化依赖和替换接口说明；实际 sherpa-onnx int8 权重需在生产镜像或模型仓库中追加缓存。",
+  "offline_cached": true,
+  "offline_cache_path": "model/real_cpu_models/sherpa-onnx-paraformer-zh-small-2024-03-09"
+}

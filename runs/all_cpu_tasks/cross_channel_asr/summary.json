@@ -1,0 +1,74 @@
+{
+  "task_type": "cross_channel_asr",
+  "backend": "cpu_reference",
+  "device": "cpu",
+  "train": {
+    "task_type": "cross_channel_asr",
+    "sample_count": 50,
+    "channel_count": 6,
+    "channels": {
+      "mic_array_1": 8,
+      "mic_array_2": 9,
+      "mic_array_3": 9,
+      "mic_array_4": 8,
+      "mic_array_5": 8,
+      "mic_array_6": 8
+    },
+    "languages": {
+      "en": 50
+    },
+    "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
+    "backend": "cpu_reference",
+    "device": "cpu",
+    "training_mode": "task_specific_reference_model",
+    "status": "trained"
+  },
+  "evaluate": {
+    "task_type": "cross_channel_asr",
+    "sample_count": 50,
+    "channel_count": 6,
+    "wer": 0.0,
+    "cer": 0.0,
+    "channel_metrics": {
+      "mic_array_1": {
+        "sample_count": 8,
+        "wer": 0.0,
+        "cer": 0.0
+      },
+      "mic_array_2": {
+        "sample_count": 9,
+        "wer": 0.0,
+        "cer": 0.0
+      },
+      "mic_array_3": {
+        "sample_count": 9,
+        "wer": 0.0,
+        "cer": 0.0
+      },
+      "mic_array_4": {
+        "sample_count": 8,
+        "wer": 0.0,
+        "cer": 0.0
+      },
+      "mic_array_5": {
+        "sample_count": 8,
+        "wer": 0.0,
+        "cer": 0.0
+      },
+      "mic_array_6": {
+        "sample_count": 8,
+        "wer": 0.0,
+        "cer": 0.0
+      }
+    },
+    "backend": "cpu_reference",
+    "device": "cpu",
+    "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/cross_channel_asr/train",
+    "status": "evaluated"
+  },
+  "paths": {
+    "train_checkpoint": "/home/code/voc_train/runs/all_cpu_tasks/cross_channel_asr/train/checkpoint.json",
+    "train_metrics": "/home/code/voc_train/runs/all_cpu_tasks/cross_channel_asr/train/train_metrics.json",
+    "evaluate_metrics": "/home/code/voc_train/runs/all_cpu_tasks/cross_channel_asr/evaluate/metrics.json"
+  }
+}

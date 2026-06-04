@@ -1,7 +1,7 @@
 {
   "task_type": "speech_correction",
-  "sample_count": 1,
-  "channel_count": 1,
+  "sample_count": 50,
+  "channel_count": 4,
   "correction_precision": 1.0,
   "correction_recall": 1.0,
   "correction_f1": 1.0,

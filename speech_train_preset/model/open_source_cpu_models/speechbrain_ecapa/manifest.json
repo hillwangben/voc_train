@@ -1,0 +1,26 @@
+{
+  "backend_name": "speechbrain_ecapa",
+  "project": "SpeechBrain ECAPA-TDNN",
+  "freeze_status": "bundled",
+  "device": "cpu",
+  "task_types": [
+    "speaker_verification"
+  ],
+  "model_examples": [
+    "speechbrain/spkrec-ecapa-voxceleb"
+  ],
+  "python_packages": [
+    "speechbrain"
+  ],
+  "bundled_model_path": "model/real_cpu_models/speechbrain-spkrec-ecapa-voxceleb",
+  "engineering_locations": [
+    "model/real_cpu_models/speechbrain-spkrec-ecapa-voxceleb",
+    "env/speech_train_all-env/requirements-cpu-open-source.txt",
+    "scripts/run_real_remaining_tasks.py",
+    "docs/open_source_cpu_models.json",
+    "docs/训练平台集成使用说明.md"
+  ],
+  "integration_note": "SpeechBrain ECAPA 权重和配置已缓存到工程内，可用于声纹识别任务的 CPU 离线替换。",
+  "offline_cached": true,
+  "offline_cache_path": "model/real_cpu_models/speechbrain-spkrec-ecapa-voxceleb"
+}

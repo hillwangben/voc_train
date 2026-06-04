@@ -1,0 +1,11 @@
+{
+  "task_type": "speaker_verification",
+  "sample_count": 50,
+  "channel_count": 4,
+  "eer_proxy": 0.0,
+  "verification_accuracy": 1.0,
+  "backend": "cpu_reference",
+  "device": "cpu",
+  "model_dir": "runs/cpu_flows/speaker_verification/train",
+  "status": "evaluated"
+}

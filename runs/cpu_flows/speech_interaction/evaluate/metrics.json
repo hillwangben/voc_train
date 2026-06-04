@@ -1,0 +1,11 @@
+{
+  "task_type": "speech_interaction",
+  "sample_count": 50,
+  "channel_count": 4,
+  "intent_accuracy": 1.0,
+  "slot_f1": 1.0,
+  "backend": "cpu_reference",
+  "device": "cpu",
+  "model_dir": "runs/cpu_flows/speech_interaction/train",
+  "status": "evaluated"
+}

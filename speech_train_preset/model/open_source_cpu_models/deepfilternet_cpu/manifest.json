@@ -1,0 +1,24 @@
+{
+  "backend_name": "deepfilternet_cpu",
+  "project": "DeepFilterNet",
+  "freeze_status": "bundled",
+  "device": "cpu",
+  "task_types": [
+    "noise_enhancement"
+  ],
+  "model_examples": [],
+  "python_packages": [
+    "deepfilternet"
+  ],
+  "bundled_model_path": "model/real_cpu_models/DeepFilterNet3",
+  "engineering_locations": [
+    "model/real_cpu_models/DeepFilterNet3",
+    "env/speech_train_all-env/requirements-cpu-open-source.txt",
+    "scripts/run_real_remaining_tasks.py",
+    "docs/open_source_cpu_models.json",
+    "docs/训练平台集成使用说明.md"
+  ],
+  "integration_note": "已固化依赖和真实流程尝试脚本；DeepFilterNet 权重和稳定推理脚本需在生产镜像中继续缓存。",
+  "offline_cached": true,
+  "offline_cache_path": "model/real_cpu_models/DeepFilterNet3"
+}

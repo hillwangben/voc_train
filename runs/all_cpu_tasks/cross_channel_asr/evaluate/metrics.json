@@ -1,12 +1,37 @@
 {
   "task_type": "cross_channel_asr",
-  "sample_count": 1,
-  "channel_count": 1,
+  "sample_count": 50,
+  "channel_count": 6,
   "wer": 0.0,
   "cer": 0.0,
   "channel_metrics": {
+    "mic_array_1": {
+      "sample_count": 8,
+      "wer": 0.0,
+      "cer": 0.0
+    },
     "mic_array_2": {
-      "sample_count": 1,
+      "sample_count": 9,
+      "wer": 0.0,
+      "cer": 0.0
+    },
+    "mic_array_3": {
+      "sample_count": 9,
+      "wer": 0.0,
+      "cer": 0.0
+    },
+    "mic_array_4": {
+      "sample_count": 8,
+      "wer": 0.0,
+      "cer": 0.0
+    },
+    "mic_array_5": {
+      "sample_count": 8,
+      "wer": 0.0,
+      "cer": 0.0
+    },
+    "mic_array_6": {
+      "sample_count": 8,
       "wer": 0.0,
       "cer": 0.0
     }

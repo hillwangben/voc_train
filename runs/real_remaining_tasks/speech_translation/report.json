@@ -1,9 +1,0 @@
-{
-  "task_type": "speech_translation",
-  "backend": "helsinki_opus_mt_tiny",
-  "open_source": true,
-  "device": "cpu",
-  "status": "attempted",
-  "sample_count": 3,
-  "blocked_reason": "Transformers and sentencepiece are installed, but OPUS-MT weights are not cached locally. Online HuggingFace model download is skipped to keep integration runs bounded."
-}

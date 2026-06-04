@@ -1,0 +1,11 @@
+{
+  "task_type": "speech_translation",
+  "sample_count": 50,
+  "channel_count": 4,
+  "bleu_proxy": 1.0,
+  "chrf_proxy": 1.0,
+  "backend": "cpu_reference",
+  "device": "cpu",
+  "model_dir": "runs/cpu_flows/speech_translation/train",
+  "status": "evaluated"
+}

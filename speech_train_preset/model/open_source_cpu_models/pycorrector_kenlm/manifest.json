@@ -1,0 +1,24 @@
+{
+  "backend_name": "pycorrector_kenlm",
+  "project": "pycorrector",
+  "freeze_status": "bundled",
+  "device": "cpu",
+  "task_types": [
+    "speech_correction"
+  ],
+  "model_examples": [],
+  "python_packages": [
+    "pycorrector"
+  ],
+  "bundled_model_path": "model/real_cpu_models/pycorrector-package-resources",
+  "engineering_locations": [
+    "model/real_cpu_models/pycorrector-package-resources",
+    "env/speech_train_all-env/requirements-cpu-open-source.txt",
+    "scripts/run_real_remaining_tasks.py",
+    "docs/open_source_cpu_models.json",
+    "docs/训练平台集成使用说明.md"
+  ],
+  "integration_note": "pycorrector 包内词典、混淆集和离线资源已缓存到工程内，可用于语音纠错任务的 CPU 离线替换。",
+  "offline_cached": true,
+  "offline_cache_path": "model/real_cpu_models/pycorrector-package-resources"
+}

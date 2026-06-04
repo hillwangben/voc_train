@@ -1,0 +1,20 @@
+{
+  "backend_name": "rnnoise",
+  "project": "RNNoise",
+  "freeze_status": "bundled",
+  "device": "cpu",
+  "task_types": [
+    "noise_enhancement"
+  ],
+  "model_examples": [],
+  "python_packages": [],
+  "bundled_model_path": "model/real_cpu_models/rnnoise",
+  "engineering_locations": [
+    "model/real_cpu_models/rnnoise",
+    "docs/open_source_cpu_models.json",
+    "docs/训练平台集成使用说明.md"
+  ],
+  "integration_note": "已固化为语音增强候选接口；当前包未编译 RNNoise 二进制或随包放置权重。",
+  "offline_cached": true,
+  "offline_cache_path": "model/real_cpu_models/rnnoise"
+}

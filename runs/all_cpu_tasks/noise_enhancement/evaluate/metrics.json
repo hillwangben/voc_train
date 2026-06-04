@@ -1,7 +1,7 @@
 {
   "task_type": "noise_enhancement",
-  "sample_count": 1,
-  "channel_count": 1,
+  "sample_count": 50,
+  "channel_count": 4,
   "snr_improvement": 1.0,
   "pesq_proxy": 1.0,
   "stoi_proxy": 1.0,

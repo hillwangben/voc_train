@@ -1,0 +1,14 @@
+{
+  "device_policy": "cpu_only",
+  "offline_cached_backends": {
+    "deepfilternet_cpu": "model/real_cpu_models/DeepFilterNet3",
+    "minilm_intent": "model/real_cpu_models/sentence-transformers-all-MiniLM-L6-v2",
+    "opus_mt_tiny": "model/real_cpu_models/Helsinki-NLP-opus-mt-en-zh",
+    "pycorrector_kenlm": "model/real_cpu_models/pycorrector-package-resources",
+    "rnnoise": "model/real_cpu_models/rnnoise",
+    "sherpa_onnx_int8": "model/real_cpu_models/sherpa-onnx-paraformer-zh-small-2024-03-09",
+    "speechbrain_ecapa": "model/real_cpu_models/speechbrain-spkrec-ecapa-voxceleb",
+    "vosk_small": "model/real_cpu_models/vosk-model-small-en-us-0.15",
+    "whisper_tiny_cpu": "model/real_cpu_models/openai-whisper-tiny"
+  }
+}

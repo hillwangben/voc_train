@@ -1,0 +1,9 @@
+{
+  "project": "RNNoise",
+  "resource_type": "embedded_c_weights",
+  "files": [
+    "rnn_data.c",
+    "rnn_data.h"
+  ],
+  "source": "https://github.com/xiph/rnnoise"
+}

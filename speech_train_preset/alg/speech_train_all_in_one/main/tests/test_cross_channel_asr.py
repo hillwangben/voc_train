@@ -31,8 +31,8 @@ class CrossChannelAsrTest(unittest.TestCase):
             )
 
             self.assertEqual(train_result["task_type"], "cross_channel_asr")
-            self.assertEqual(train_result["sample_count"], 1)
-            self.assertEqual(train_result["channel_count"], 1)
+            self.assertEqual(train_result["sample_count"], 50)
+            self.assertEqual(train_result["channel_count"], 6)
             self.assertTrue((tmp_dir / "train" / "checkpoint.json").exists())
 
             self.assertEqual(eval_result["task_type"], "cross_channel_asr")
@@ -42,7 +42,10 @@ class CrossChannelAsrTest(unittest.TestCase):
 
             metrics = json.loads((tmp_dir / "evaluate" / "metrics.json").read_text())
             self.assertIn("channel_metrics", metrics)
-            self.assertEqual(metrics["channel_metrics"]["mic_array_2"]["sample_count"], 1)
+            self.assertEqual(
+                sum(channel["sample_count"] for channel in metrics["channel_metrics"].values()),
+                50,
+            )
 
 
 if __name__ == "__main__":

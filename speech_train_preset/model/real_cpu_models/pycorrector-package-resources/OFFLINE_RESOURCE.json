@@ -1,0 +1,9 @@
+{
+  "project": "pycorrector",
+  "resource_type": "installed_package_resources",
+  "source_package": "/home/admin/.local/lib/python3.10/site-packages/pycorrector",
+  "copied": [
+    "data",
+    "utils"
+  ]
+}

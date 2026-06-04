@@ -1,0 +1,33 @@
+{
+  "task_type": "low_resource_asr",
+  "sample_count": 50,
+  "channel_count": 4,
+  "wer": 0.0,
+  "cer": 0.0,
+  "channel_metrics": {
+    "mic_1": {
+      "sample_count": 12,
+      "wer": 0.0,
+      "cer": 0.0
+    },
+    "mic_2": {
+      "sample_count": 13,
+      "wer": 0.0,
+      "cer": 0.0
+    },
+    "mic_3": {
+      "sample_count": 13,
+      "wer": 0.0,
+      "cer": 0.0
+    },
+    "mic_4": {
+      "sample_count": 12,
+      "wer": 0.0,
+      "cer": 0.0
+    }
+  },
+  "backend": "cpu_reference",
+  "device": "cpu",
+  "model_dir": "runs/cpu_flows/low_resource_asr/train",
+  "status": "evaluated"
+}

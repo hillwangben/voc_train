@@ -4,6 +4,7 @@
     {
       "name": "vosk_small",
       "project": "Vosk",
+      "frozen_manifest_path": "model/open_source_cpu_models/vosk_small/manifest.json",
       "license": "Apache-2.0",
       "device": "cpu",
       "task_types": ["asr", "cross_channel_asr", "low_resource_asr", "transcription"],
@@ -14,6 +15,7 @@
     {
       "name": "sherpa_onnx_int8",
       "project": "sherpa-onnx",
+      "frozen_manifest_path": "model/open_source_cpu_models/sherpa_onnx_int8/manifest.json",
       "license": "Apache-2.0",
       "device": "cpu",
       "task_types": ["asr", "cross_channel_asr", "low_resource_asr", "code_switch_asr", "transcription"],
@@ -24,6 +26,7 @@
     {
       "name": "whisper_tiny_cpu",
       "project": "OpenAI Whisper",
+      "frozen_manifest_path": "model/open_source_cpu_models/whisper_tiny_cpu/manifest.json",
       "license": "MIT",
       "device": "cpu",
       "task_types": ["asr", "code_switch_asr", "speech_translation", "transcription"],
@@ -34,6 +37,7 @@
     {
       "name": "rnnoise",
       "project": "RNNoise",
+      "frozen_manifest_path": "model/open_source_cpu_models/rnnoise/manifest.json",
       "license": "BSD-3-Clause",
       "device": "cpu",
       "task_types": ["noise_enhancement"],
@@ -43,6 +47,7 @@
     {
       "name": "deepfilternet_cpu",
       "project": "DeepFilterNet",
+      "frozen_manifest_path": "model/open_source_cpu_models/deepfilternet_cpu/manifest.json",
       "license": "MIT/Apache-style project license",
       "device": "cpu",
       "task_types": ["noise_enhancement"],
@@ -52,6 +57,7 @@
     {
       "name": "speechbrain_ecapa",
       "project": "SpeechBrain ECAPA-TDNN",
+      "frozen_manifest_path": "model/open_source_cpu_models/speechbrain_ecapa/manifest.json",
       "license": "Apache-2.0",
       "device": "cpu",
       "task_types": ["speaker_verification"],
@@ -62,6 +68,7 @@
     {
       "name": "minilm_intent",
       "project": "Sentence Transformers / MiniLM",
+      "frozen_manifest_path": "model/open_source_cpu_models/minilm_intent/manifest.json",
       "license": "Apache-2.0",
       "device": "cpu",
       "task_types": ["speech_interaction"],
@@ -72,16 +79,18 @@
     {
       "name": "opus_mt_tiny",
       "project": "Helsinki-NLP OPUS-MT",
+      "frozen_manifest_path": "model/open_source_cpu_models/opus_mt_tiny/manifest.json",
       "license": "MIT",
       "device": "cpu",
       "task_types": ["speech_translation"],
-      "model_examples": ["Helsinki-NLP/opus-mt-zh-en"],
+      "model_examples": ["Helsinki-NLP/opus-mt-en-zh"],
       "python_packages": ["transformers", "sentencepiece"],
       "notes": "Small text translation backend used after ASR."
     },
     {
       "name": "pycorrector_kenlm",
       "project": "pycorrector",
+      "frozen_manifest_path": "model/open_source_cpu_models/pycorrector_kenlm/manifest.json",
       "license": "Apache-2.0",
       "device": "cpu",
       "task_types": ["speech_correction"],
@@ -90,4 +99,3 @@
     }
   ]
 }
-

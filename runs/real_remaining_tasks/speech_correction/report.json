@@ -1,9 +1,0 @@
-{
-  "task_type": "speech_correction",
-  "backend": "pycorrector_kenlm",
-  "open_source": true,
-  "device": "cpu",
-  "status": "attempted",
-  "sample_count": 3,
-  "blocked_reason": "pycorrector imports successfully after CPU torch installation, but full corrector initialization is skipped in bounded integration runs because it may load additional language resources."
-}

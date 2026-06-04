@@ -1,0 +1,12 @@
+{
+  "task_type": "noise_enhancement",
+  "sample_count": 50,
+  "channel_count": 4,
+  "snr_improvement": 1.0,
+  "pesq_proxy": 1.0,
+  "stoi_proxy": 1.0,
+  "backend": "cpu_reference",
+  "device": "cpu",
+  "model_dir": "runs/cpu_flows/noise_enhancement/train",
+  "status": "evaluated"
+}

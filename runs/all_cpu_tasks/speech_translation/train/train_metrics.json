@@ -1,6 +1,8 @@
 {
   "loss": 0.0,
   "translation_pairs": 50,
+  "training_backend": "opus_mt_tiny",
+  "training_mode": "reference_opus_mt_tiny",
   "channel_count": 4,
   "sample_count": 50
 }

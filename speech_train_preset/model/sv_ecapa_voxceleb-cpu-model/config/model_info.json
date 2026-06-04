@@ -1,0 +1,14 @@
+{
+  "asset_name": "sv_ecapa_voxceleb-cpu-model",
+  "version": "v1",
+  "task": "声纹识别",
+  "task_key": "sv",
+  "device_policy": "cpu_only",
+  "source": {
+    "directory": "model/real_cpu_models/speechbrain-spkrec-ecapa-voxceleb",
+    "symlink": "model/sv_ecapa_voxceleb-cpu-model/model/sv_ecapa_voxceleb"
+  },
+  "framework": "speechbrain",
+  "license": "Apache-2.0",
+  "notes": "CPU-only, offline-cache, no retraining required for inference."
+}

@@ -1,6 +1,8 @@
 {
   "loss": 0.0,
   "intent_count": 4,
+  "training_backend": "minilm_intent",
+  "training_mode": "reference_minilm_intent",
   "channel_count": 4,
   "sample_count": 50
 }

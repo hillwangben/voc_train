@@ -202,5 +202,5 @@ python3 scripts/run_all_cpu_tasks.py
 已逐个执行 10 个独立脚本，全部生成独立 `summary.json`，并通过单元测试：
 
 ```bash
-python3 -m unittest speech_train_preset/alg/speech_train_all_in_one/main/tests/test_independent_cpu_flow_scripts.py
+python3 -m unittest speech_train_preset/alg/speech_train_all-alg/main/tests/test_independent_cpu_flow_scripts.py
 ```

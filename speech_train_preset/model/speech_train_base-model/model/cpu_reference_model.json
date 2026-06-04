@@ -1,5 +1,29 @@
 {
   "backend": "cpu_reference",
   "device": "cpu",
-  "task_count": 10
+  "task_count": 10,
+  "design": "本 model 资产为语音类 CPU 基础入口/聚合模型,不存放具体权重;具体 9 类真实开源模型已拆分为独立 model 资产,见 model/<asset>/ 。",
+  "backend_assets": [
+    "asr_whisper_tiny-cpu-model",
+    "asr_vosk_small-cpu-model",
+    "asr_sherpa_paraformer-cpu-model",
+    "mt_opus_mt_en_zh-cpu-model",
+    "si_minilm_intent-cpu-model",
+    "sv_ecapa_voxceleb-cpu-model",
+    "ne_deepfilternet3-cpu-model",
+    "ne_rnnoise-cpu-model",
+    "sc_pycorrector-cpu-model"
+  ],
+  "task_backend_mapping": {
+    "asr": ["asr_whisper_tiny-cpu-model", "asr_vosk_small-cpu-model", "asr_sherpa_paraformer-cpu-model"],
+    "cross_channel_asr": ["asr_sherpa_paraformer-cpu-model"],
+    "low_resource_asr": ["asr_whisper_tiny-cpu-model", "asr_vosk_small-cpu-model"],
+    "code_switch_asr": ["asr_whisper_tiny-cpu-model"],
+    "transcription": ["asr_sherpa_paraformer-cpu-model", "asr_whisper_tiny-cpu-model"],
+    "speech_translation": ["mt_opus_mt_en_zh-cpu-model"],
+    "speech_interaction": ["si_minilm_intent-cpu-model"],
+    "speaker_verification": ["sv_ecapa_voxceleb-cpu-model"],
+    "noise_enhancement": ["ne_deepfilternet3-cpu-model", "ne_rnnoise-cpu-model"],
+    "speech_correction": ["sc_pycorrector-cpu-model"]
+  }
 }

@@ -4,8 +4,9 @@
   "channel_count": 4,
   "eer_proxy": 0.0,
   "verification_accuracy": 1.0,
-  "backend": "cpu_reference",
-  "device": "cpu",
+  "backend": "speechbrain_ecapa",
+  "backend_requested": "speechbrain_ecapa",
   "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/speaker_verification/train",
+  "device": "cpu",
   "status": "evaluated"
 }

@@ -2,32 +2,35 @@
   "task_type": "code_switch_asr",
   "sample_count": 50,
   "channel_count": 4,
-  "wer": 0.0,
-  "cer": 0.0,
+  "wer": 1.0,
+  "cer": 1.0,
   "channel_metrics": {
     "mic_1": {
       "sample_count": 12,
-      "wer": 0.0,
-      "cer": 0.0
+      "wer": 1.0,
+      "cer": 1.0
     },
     "mic_2": {
       "sample_count": 13,
-      "wer": 0.0,
-      "cer": 0.0
+      "wer": 1.0,
+      "cer": 1.0
     },
     "mic_3": {
       "sample_count": 13,
-      "wer": 0.0,
-      "cer": 0.0
+      "wer": 1.0,
+      "cer": 1.0
     },
     "mic_4": {
       "sample_count": 12,
-      "wer": 0.0,
-      "cer": 0.0
+      "wer": 1.0,
+      "cer": 1.0
     }
   },
-  "backend": "cpu_reference",
+  "backend": "sherpa_onnx_int8",
   "device": "cpu",
-  "model_dir": "runs/cpu_flows/code_switch_asr/train",
+  "n_transcribed_ok": 50,
+  "n_transcribed_fail": 0,
+  "backend_requested": "sherpa_onnx_int8",
+  "model_dir": "/home/code/voc_train/runs/cpu_flows/code_switch_asr/train",
   "status": "evaluated"
 }

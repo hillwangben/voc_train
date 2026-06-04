@@ -1,6 +1,9 @@
 {
   "task_type": "speech_correction",
-  "backend": "cpu_reference",
+  "backend": "pycorrector_kenlm",
+  "backend_candidates": [
+    "pycorrector_kenlm"
+  ],
   "device": "cpu",
   "train": {
     "task_type": "speech_correction",
@@ -16,7 +19,8 @@
       "en": 50
     },
     "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
-    "backend": "cpu_reference",
+    "backend": "pycorrector_kenlm",
+    "backend_requested": "pycorrector_kenlm",
     "device": "cpu",
     "training_mode": "task_specific_reference_model",
     "status": "trained"
@@ -25,17 +29,22 @@
     "task_type": "speech_correction",
     "sample_count": 50,
     "channel_count": 4,
-    "correction_precision": 1.0,
-    "correction_recall": 1.0,
-    "correction_f1": 1.0,
-    "backend": "cpu_reference",
+    "correction_precision": 0.0,
+    "correction_recall": 0.0,
+    "correction_f1": 0.0,
+    "backend_asr": "vosk_small",
+    "backend_correction": "pycorrector_kenlm",
+    "n_corrected_ok": 50,
+    "n_corrected_fail": 0,
+    "backend": "pycorrector_kenlm",
+    "backend_requested": "pycorrector_kenlm",
+    "model_dir": "/home/code/voc_train/runs/cpu_flows/speech_correction/train",
     "device": "cpu",
-    "model_dir": "runs/cpu_flows/speech_correction/train",
     "status": "evaluated"
   },
   "paths": {
-    "train_checkpoint": "runs/cpu_flows/speech_correction/train/checkpoint.json",
-    "train_metrics": "runs/cpu_flows/speech_correction/train/train_metrics.json",
-    "evaluate_metrics": "runs/cpu_flows/speech_correction/evaluate/metrics.json"
+    "train_checkpoint": "/home/code/voc_train/runs/cpu_flows/speech_correction/train/checkpoint.json",
+    "train_metrics": "/home/code/voc_train/runs/cpu_flows/speech_correction/train/train_metrics.json",
+    "evaluate_metrics": "/home/code/voc_train/runs/cpu_flows/speech_correction/evaluate/metrics.json"
   }
 }

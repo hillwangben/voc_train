@@ -1,10 +1,15 @@
 {
-  "backend": "cpu_reference",
   "device": "cpu",
+  "backend_strategy": "default_backend_for_task(优先真实后端,缺失回退 cpu_reference)",
   "tasks": [
     {
       "task_type": "asr",
-      "backend": "cpu_reference",
+      "backend": "vosk_small",
+      "backend_candidates": [
+        "vosk_small",
+        "sherpa_onnx_int8",
+        "whisper_tiny_cpu"
+      ],
       "device": "cpu",
       "train": {
         "task_type": "asr",
@@ -20,7 +25,8 @@
           "en": 50
         },
         "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
-        "backend": "cpu_reference",
+        "backend": "vosk_small",
+        "backend_requested": "vosk_small",
         "device": "cpu",
         "training_mode": "task_specific_reference_model",
         "status": "trained"
@@ -29,32 +35,35 @@
         "task_type": "asr",
         "sample_count": 50,
         "channel_count": 4,
-        "wer": 0.0,
-        "cer": 0.0,
+        "wer": 1.0,
+        "cer": 1.0,
         "channel_metrics": {
           "mic_1": {
             "sample_count": 12,
-            "wer": 0.0,
-            "cer": 0.0
+            "wer": 1.0,
+            "cer": 1.0
           },
           "mic_2": {
             "sample_count": 13,
-            "wer": 0.0,
-            "cer": 0.0
+            "wer": 1.0,
+            "cer": 1.0
           },
           "mic_3": {
             "sample_count": 13,
-            "wer": 0.0,
-            "cer": 0.0
+            "wer": 1.0,
+            "cer": 1.0
           },
           "mic_4": {
             "sample_count": 12,
-            "wer": 0.0,
-            "cer": 0.0
+            "wer": 1.0,
+            "cer": 1.0
           }
         },
-        "backend": "cpu_reference",
+        "backend": "vosk_small",
         "device": "cpu",
+        "n_transcribed_ok": 50,
+        "n_transcribed_fail": 0,
+        "backend_requested": "vosk_small",
         "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/asr/train",
         "status": "evaluated"
       },
@@ -66,7 +75,11 @@
     },
     {
       "task_type": "noise_enhancement",
-      "backend": "cpu_reference",
+      "backend": "rnnoise",
+      "backend_candidates": [
+        "rnnoise",
+        "deepfilternet_cpu"
+      ],
       "device": "cpu",
       "train": {
         "task_type": "noise_enhancement",
@@ -82,7 +95,8 @@
           "en": 50
         },
         "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
-        "backend": "cpu_reference",
+        "backend": "rnnoise",
+        "backend_requested": "rnnoise",
         "device": "cpu",
         "training_mode": "task_specific_reference_model",
         "status": "trained"
@@ -91,12 +105,15 @@
         "task_type": "noise_enhancement",
         "sample_count": 50,
         "channel_count": 4,
-        "snr_improvement": 1.0,
-        "pesq_proxy": 1.0,
-        "stoi_proxy": 1.0,
-        "backend": "cpu_reference",
-        "device": "cpu",
+        "snr_improvement": 3.8950000000000005,
+        "pesq_proxy": 3.5,
+        "stoi_proxy": 0.92,
+        "backend": "rnnoise",
+        "n_enhanced_ok": 50,
+        "n_enhanced_fail": 0,
+        "backend_requested": "rnnoise",
         "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/noise_enhancement/train",
+        "device": "cpu",
         "status": "evaluated"
       },
       "paths": {
@@ -107,7 +124,11 @@
     },
     {
       "task_type": "cross_channel_asr",
-      "backend": "cpu_reference",
+      "backend": "vosk_small",
+      "backend_candidates": [
+        "vosk_small",
+        "sherpa_onnx_int8"
+      ],
       "device": "cpu",
       "train": {
         "task_type": "cross_channel_asr",
@@ -125,7 +146,8 @@
           "en": 50
         },
         "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
-        "backend": "cpu_reference",
+        "backend": "vosk_small",
+        "backend_requested": "vosk_small",
         "device": "cpu",
         "training_mode": "task_specific_reference_model",
         "status": "trained"
@@ -134,42 +156,45 @@
         "task_type": "cross_channel_asr",
         "sample_count": 50,
         "channel_count": 6,
-        "wer": 0.0,
-        "cer": 0.0,
+        "wer": 1.0,
+        "cer": 1.0,
         "channel_metrics": {
           "mic_array_1": {
             "sample_count": 8,
-            "wer": 0.0,
-            "cer": 0.0
+            "wer": 1.0,
+            "cer": 1.0
           },
           "mic_array_2": {
             "sample_count": 9,
-            "wer": 0.0,
-            "cer": 0.0
+            "wer": 1.0,
+            "cer": 1.0
           },
           "mic_array_3": {
             "sample_count": 9,
-            "wer": 0.0,
-            "cer": 0.0
+            "wer": 1.0,
+            "cer": 1.0
           },
           "mic_array_4": {
             "sample_count": 8,
-            "wer": 0.0,
-            "cer": 0.0
+            "wer": 1.0,
+            "cer": 1.0
           },
           "mic_array_5": {
             "sample_count": 8,
-            "wer": 0.0,
-            "cer": 0.0
+            "wer": 1.0,
+            "cer": 1.0
           },
           "mic_array_6": {
             "sample_count": 8,
-            "wer": 0.0,
-            "cer": 0.0
+            "wer": 1.0,
+            "cer": 1.0
           }
         },
-        "backend": "cpu_reference",
+        "backend": "vosk_small",
         "device": "cpu",
+        "n_transcribed_ok": 50,
+        "n_transcribed_fail": 0,
+        "backend_requested": "vosk_small",
         "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/cross_channel_asr/train",
         "status": "evaluated"
       },
@@ -181,7 +206,11 @@
     },
     {
       "task_type": "low_resource_asr",
-      "backend": "cpu_reference",
+      "backend": "vosk_small",
+      "backend_candidates": [
+        "vosk_small",
+        "sherpa_onnx_int8"
+      ],
       "device": "cpu",
       "train": {
         "task_type": "low_resource_asr",
@@ -197,7 +226,8 @@
           "ug": 50
         },
         "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
-        "backend": "cpu_reference",
+        "backend": "vosk_small",
+        "backend_requested": "vosk_small",
         "device": "cpu",
         "training_mode": "task_specific_reference_model",
         "status": "trained"
@@ -206,32 +236,35 @@
         "task_type": "low_resource_asr",
         "sample_count": 50,
         "channel_count": 4,
-        "wer": 0.0,
-        "cer": 0.0,
+        "wer": 1.0,
+        "cer": 1.0,
         "channel_metrics": {
           "mic_1": {
             "sample_count": 12,
-            "wer": 0.0,
-            "cer": 0.0
+            "wer": 1.0,
+            "cer": 1.0
           },
           "mic_2": {
             "sample_count": 13,
-            "wer": 0.0,
-            "cer": 0.0
+            "wer": 1.0,
+            "cer": 1.0
           },
           "mic_3": {
             "sample_count": 13,
-            "wer": 0.0,
-            "cer": 0.0
+            "wer": 1.0,
+            "cer": 1.0
           },
           "mic_4": {
             "sample_count": 12,
-            "wer": 0.0,
-            "cer": 0.0
+            "wer": 1.0,
+            "cer": 1.0
           }
         },
-        "backend": "cpu_reference",
+        "backend": "vosk_small",
         "device": "cpu",
+        "n_transcribed_ok": 50,
+        "n_transcribed_fail": 0,
+        "backend_requested": "vosk_small",
         "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/low_resource_asr/train",
         "status": "evaluated"
       },
@@ -243,7 +276,11 @@
     },
     {
       "task_type": "code_switch_asr",
-      "backend": "cpu_reference",
+      "backend": "sherpa_onnx_int8",
+      "backend_candidates": [
+        "sherpa_onnx_int8",
+        "whisper_tiny_cpu"
+      ],
       "device": "cpu",
       "train": {
         "task_type": "code_switch_asr",
@@ -259,7 +296,8 @@
           "zh-en": 50
         },
         "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
-        "backend": "cpu_reference",
+        "backend": "sherpa_onnx_int8",
+        "backend_requested": "sherpa_onnx_int8",
         "device": "cpu",
         "training_mode": "task_specific_reference_model",
         "status": "trained"
@@ -268,32 +306,35 @@
         "task_type": "code_switch_asr",
         "sample_count": 50,
         "channel_count": 4,
-        "wer": 0.0,
-        "cer": 0.0,
+        "wer": 1.0,
+        "cer": 1.0,
         "channel_metrics": {
           "mic_1": {
             "sample_count": 12,
-            "wer": 0.0,
-            "cer": 0.0
+            "wer": 1.0,
+            "cer": 1.0
           },
           "mic_2": {
             "sample_count": 13,
-            "wer": 0.0,
-            "cer": 0.0
+            "wer": 1.0,
+            "cer": 1.0
           },
           "mic_3": {
             "sample_count": 13,
-            "wer": 0.0,
-            "cer": 0.0
+            "wer": 1.0,
+            "cer": 1.0
           },
           "mic_4": {
             "sample_count": 12,
-            "wer": 0.0,
-            "cer": 0.0
+            "wer": 1.0,
+            "cer": 1.0
           }
         },
-        "backend": "cpu_reference",
+        "backend": "sherpa_onnx_int8",
         "device": "cpu",
+        "n_transcribed_ok": 50,
+        "n_transcribed_fail": 0,
+        "backend_requested": "sherpa_onnx_int8",
         "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/code_switch_asr/train",
         "status": "evaluated"
       },
@@ -305,7 +346,10 @@
     },
     {
       "task_type": "speaker_verification",
-      "backend": "cpu_reference",
+      "backend": "speechbrain_ecapa",
+      "backend_candidates": [
+        "speechbrain_ecapa"
+      ],
       "device": "cpu",
       "train": {
         "task_type": "speaker_verification",
@@ -321,7 +365,8 @@
           "en": 50
         },
         "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
-        "backend": "cpu_reference",
+        "backend": "speechbrain_ecapa",
+        "backend_requested": "speechbrain_ecapa",
         "device": "cpu",
         "training_mode": "task_specific_reference_model",
         "status": "trained"
@@ -332,9 +377,10 @@
         "channel_count": 4,
         "eer_proxy": 0.0,
         "verification_accuracy": 1.0,
-        "backend": "cpu_reference",
-        "device": "cpu",
+        "backend": "speechbrain_ecapa",
+        "backend_requested": "speechbrain_ecapa",
         "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/speaker_verification/train",
+        "device": "cpu",
         "status": "evaluated"
       },
       "paths": {
@@ -345,7 +391,10 @@
     },
     {
       "task_type": "speech_interaction",
-      "backend": "cpu_reference",
+      "backend": "minilm_intent",
+      "backend_candidates": [
+        "minilm_intent"
+      ],
       "device": "cpu",
       "train": {
         "task_type": "speech_interaction",
@@ -361,7 +410,8 @@
           "en": 50
         },
         "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
-        "backend": "cpu_reference",
+        "backend": "minilm_intent",
+        "backend_requested": "minilm_intent",
         "device": "cpu",
         "training_mode": "task_specific_reference_model",
         "status": "trained"
@@ -370,11 +420,16 @@
         "task_type": "speech_interaction",
         "sample_count": 50,
         "channel_count": 4,
-        "intent_accuracy": 1.0,
-        "slot_f1": 1.0,
-        "backend": "cpu_reference",
-        "device": "cpu",
+        "intent_accuracy": 0.26,
+        "slot_f1": 0.0,
+        "backend_asr": "vosk_small",
+        "backend_intent": "minilm_intent",
+        "n_intent_ok": 50,
+        "n_intent_fail": 0,
+        "backend": "minilm_intent",
+        "backend_requested": "minilm_intent",
         "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/speech_interaction/train",
+        "device": "cpu",
         "status": "evaluated"
       },
       "paths": {
@@ -385,7 +440,11 @@
     },
     {
       "task_type": "speech_translation",
-      "backend": "cpu_reference",
+      "backend": "opus_mt_tiny",
+      "backend_candidates": [
+        "whisper_tiny_cpu",
+        "opus_mt_tiny"
+      ],
       "device": "cpu",
       "train": {
         "task_type": "speech_translation",
@@ -401,7 +460,8 @@
           "en": 50
         },
         "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
-        "backend": "cpu_reference",
+        "backend": "opus_mt_tiny",
+        "backend_requested": "opus_mt_tiny",
         "device": "cpu",
         "training_mode": "task_specific_reference_model",
         "status": "trained"
@@ -410,11 +470,16 @@
         "task_type": "speech_translation",
         "sample_count": 50,
         "channel_count": 4,
-        "bleu_proxy": 1.0,
-        "chrf_proxy": 1.0,
-        "backend": "cpu_reference",
-        "device": "cpu",
+        "bleu_proxy": 0.0,
+        "chrf_proxy": 0.0,
+        "backend_asr": "vosk_small",
+        "backend_mt": "opus_mt_tiny",
+        "n_translated_ok": 50,
+        "n_translated_fail": 0,
+        "backend": "opus_mt_tiny",
+        "backend_requested": "opus_mt_tiny",
         "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/speech_translation/train",
+        "device": "cpu",
         "status": "evaluated"
       },
       "paths": {
@@ -425,7 +490,12 @@
     },
     {
       "task_type": "transcription",
-      "backend": "cpu_reference",
+      "backend": "vosk_small",
+      "backend_candidates": [
+        "vosk_small",
+        "sherpa_onnx_int8",
+        "whisper_tiny_cpu"
+      ],
       "device": "cpu",
       "train": {
         "task_type": "transcription",
@@ -441,7 +511,8 @@
           "en": 50
         },
         "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
-        "backend": "cpu_reference",
+        "backend": "vosk_small",
+        "backend_requested": "vosk_small",
         "device": "cpu",
         "training_mode": "task_specific_reference_model",
         "status": "trained"
@@ -450,32 +521,35 @@
         "task_type": "transcription",
         "sample_count": 50,
         "channel_count": 4,
-        "wer": 0.0,
-        "cer": 0.0,
+        "wer": 1.0,
+        "cer": 1.0,
         "channel_metrics": {
           "mic_1": {
             "sample_count": 12,
-            "wer": 0.0,
-            "cer": 0.0
+            "wer": 1.0,
+            "cer": 1.0
           },
           "mic_2": {
             "sample_count": 13,
-            "wer": 0.0,
-            "cer": 0.0
+            "wer": 1.0,
+            "cer": 1.0
           },
           "mic_3": {
             "sample_count": 13,
-            "wer": 0.0,
-            "cer": 0.0
+            "wer": 1.0,
+            "cer": 1.0
           },
           "mic_4": {
             "sample_count": 12,
-            "wer": 0.0,
-            "cer": 0.0
+            "wer": 1.0,
+            "cer": 1.0
           }
         },
-        "backend": "cpu_reference",
+        "backend": "vosk_small",
         "device": "cpu",
+        "n_transcribed_ok": 50,
+        "n_transcribed_fail": 0,
+        "backend_requested": "vosk_small",
         "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/transcription/train",
         "status": "evaluated"
       },
@@ -487,7 +561,10 @@
     },
     {
       "task_type": "speech_correction",
-      "backend": "cpu_reference",
+      "backend": "pycorrector_kenlm",
+      "backend_candidates": [
+        "pycorrector_kenlm"
+      ],
       "device": "cpu",
       "train": {
         "task_type": "speech_correction",
@@ -503,7 +580,8 @@
           "en": 50
         },
         "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
-        "backend": "cpu_reference",
+        "backend": "pycorrector_kenlm",
+        "backend_requested": "pycorrector_kenlm",
         "device": "cpu",
         "training_mode": "task_specific_reference_model",
         "status": "trained"
@@ -512,12 +590,17 @@
         "task_type": "speech_correction",
         "sample_count": 50,
         "channel_count": 4,
-        "correction_precision": 1.0,
-        "correction_recall": 1.0,
-        "correction_f1": 1.0,
-        "backend": "cpu_reference",
-        "device": "cpu",
+        "correction_precision": 0.0,
+        "correction_recall": 0.0,
+        "correction_f1": 0.0,
+        "backend_asr": "vosk_small",
+        "backend_correction": "pycorrector_kenlm",
+        "n_corrected_ok": 50,
+        "n_corrected_fail": 0,
+        "backend": "pycorrector_kenlm",
+        "backend_requested": "pycorrector_kenlm",
         "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/speech_correction/train",
+        "device": "cpu",
         "status": "evaluated"
       },
       "paths": {

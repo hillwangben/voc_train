@@ -1,6 +1,8 @@
 {
   "loss": 0.0,
   "correction_pairs": 50,
+  "training_backend": "pycorrector_kenlm",
+  "training_mode": "reference_pycorrector_kenlm",
   "channel_count": 4,
   "sample_count": 50
 }

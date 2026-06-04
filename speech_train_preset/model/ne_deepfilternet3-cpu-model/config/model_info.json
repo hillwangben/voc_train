@@ -1,0 +1,14 @@
+{
+  "asset_name": "ne_deepfilternet3-cpu-model",
+  "version": "v1",
+  "task": "语音增强",
+  "task_key": "ne",
+  "device_policy": "cpu_only",
+  "source": {
+    "directory": "model/real_cpu_models/DeepFilterNet3",
+    "symlink": "model/ne_deepfilternet3-cpu-model/model/ne_deepfilternet3"
+  },
+  "framework": "pytorch",
+  "license": "MIT",
+  "notes": "CPU-only, offline-cache, no retraining required for inference."
+}

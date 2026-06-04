@@ -1,11 +1,17 @@
 {
   "name": "speech_train_sample-dataset",
-  "version": "v2-50-per-task",
+  "version": "v3-50-per-task-split",
   "sample_rate": 16000,
   "device_policy": "cpu_only",
   "task_count": 10,
   "samples_per_task": 50,
   "total_samples": 500,
+  "split": {
+    "train": 400,
+    "val": 50,
+    "test": 50
+  },
+  "split_rule": "utt_id 末三位编号 001-040 -> train, 041-045 -> val, 046-050 -> test;_clean.wav 配套同步划分",
   "tasks": [
     "asr",
     "noise_enhancement",
@@ -18,5 +24,13 @@
     "transcription",
     "speech_correction"
   ],
-  "description": "Synthetic but valid wav/jsonl data with 50 samples per speech vertical training task."
+  "directory_layout": {
+    "audio/train/": "训练集 wav (含 _clean.wav 参考音频)",
+    "audio/val/": "验证集 wav",
+    "audio/test/": "测试集 wav",
+    "labels/train.jsonl": "训练集标注 (400 条)",
+    "labels/val.jsonl": "验证集标注 (50 条)",
+    "labels/test.jsonl": "测试集标注 (50 条)"
+  },
+  "description": "Synthetic but valid wav/jsonl data with 50 samples per speech vertical training task, split into train/val/test."
 }

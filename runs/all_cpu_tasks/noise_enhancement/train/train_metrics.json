@@ -2,6 +2,8 @@
   "loss": 0.0,
   "snr_improvement": 1.0,
   "paired_clean_noisy_samples": 50,
+  "training_backend": "rnnoise",
+  "training_mode": "reference_rnnoise",
   "channel_count": 4,
   "sample_count": 50
 }

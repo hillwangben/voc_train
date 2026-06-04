@@ -1,6 +1,11 @@
 {
   "task_type": "transcription",
-  "backend": "cpu_reference",
+  "backend": "vosk_small",
+  "backend_candidates": [
+    "vosk_small",
+    "sherpa_onnx_int8",
+    "whisper_tiny_cpu"
+  ],
   "device": "cpu",
   "train": {
     "task_type": "transcription",
@@ -16,7 +21,8 @@
       "en": 50
     },
     "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
-    "backend": "cpu_reference",
+    "backend": "vosk_small",
+    "backend_requested": "vosk_small",
     "device": "cpu",
     "training_mode": "task_specific_reference_model",
     "status": "trained"
@@ -25,32 +31,35 @@
     "task_type": "transcription",
     "sample_count": 50,
     "channel_count": 4,
-    "wer": 0.0,
-    "cer": 0.0,
+    "wer": 1.0,
+    "cer": 1.0,
     "channel_metrics": {
       "mic_1": {
         "sample_count": 12,
-        "wer": 0.0,
-        "cer": 0.0
+        "wer": 1.0,
+        "cer": 1.0
       },
       "mic_2": {
         "sample_count": 13,
-        "wer": 0.0,
-        "cer": 0.0
+        "wer": 1.0,
+        "cer": 1.0
       },
       "mic_3": {
         "sample_count": 13,
-        "wer": 0.0,
-        "cer": 0.0
+        "wer": 1.0,
+        "cer": 1.0
       },
       "mic_4": {
         "sample_count": 12,
-        "wer": 0.0,
-        "cer": 0.0
+        "wer": 1.0,
+        "cer": 1.0
       }
     },
-    "backend": "cpu_reference",
+    "backend": "vosk_small",
     "device": "cpu",
+    "n_transcribed_ok": 50,
+    "n_transcribed_fail": 0,
+    "backend_requested": "vosk_small",
     "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/transcription/train",
     "status": "evaluated"
   },

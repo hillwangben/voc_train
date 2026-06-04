@@ -4,18 +4,23 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-MAIN_DIR = ROOT / "alg" / "speech_train_all_in_one" / "main"
+MAIN_DIR = ROOT / "alg" / "speech_train_all-alg" / "main"
 FLOWS_DIR = ROOT / "scripts" / "cpu_flows"
 sys.path.insert(0, str(FLOWS_DIR))
 sys.path.insert(0, str(MAIN_DIR))
 
 from run_cpu_flow import run_flow
 from src.speech_tasks import TASK_TYPES
+from src.backends import default_backend_for_task, recommended_backends_for_task
 
 
 def main():
     output_root = ROOT.parent / "runs" / "all_cpu_tasks"
-    summary = {"backend": "cpu_reference", "device": "cpu", "tasks": []}
+    summary = {
+        "device": "cpu",
+        "backend_strategy": "default_backend_for_task(优先真实后端,缺失回退 cpu_reference)",
+        "tasks": [],
+    }
 
     for task_type in TASK_TYPES:
         report_path = run_flow(task_type, output_root)

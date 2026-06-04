@@ -1,6 +1,10 @@
 {
   "task_type": "low_resource_asr",
-  "backend": "cpu_reference",
+  "backend": "vosk_small",
+  "backend_candidates": [
+    "vosk_small",
+    "sherpa_onnx_int8"
+  ],
   "device": "cpu",
   "train": {
     "task_type": "low_resource_asr",
@@ -16,7 +20,8 @@
       "ug": 50
     },
     "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
-    "backend": "cpu_reference",
+    "backend": "vosk_small",
+    "backend_requested": "vosk_small",
     "device": "cpu",
     "training_mode": "task_specific_reference_model",
     "status": "trained"
@@ -25,38 +30,41 @@
     "task_type": "low_resource_asr",
     "sample_count": 50,
     "channel_count": 4,
-    "wer": 0.0,
-    "cer": 0.0,
+    "wer": 1.0,
+    "cer": 1.0,
     "channel_metrics": {
       "mic_1": {
         "sample_count": 12,
-        "wer": 0.0,
-        "cer": 0.0
+        "wer": 1.0,
+        "cer": 1.0
       },
       "mic_2": {
         "sample_count": 13,
-        "wer": 0.0,
-        "cer": 0.0
+        "wer": 1.0,
+        "cer": 1.0
       },
       "mic_3": {
         "sample_count": 13,
-        "wer": 0.0,
-        "cer": 0.0
+        "wer": 1.0,
+        "cer": 1.0
       },
       "mic_4": {
         "sample_count": 12,
-        "wer": 0.0,
-        "cer": 0.0
+        "wer": 1.0,
+        "cer": 1.0
       }
     },
-    "backend": "cpu_reference",
+    "backend": "vosk_small",
     "device": "cpu",
-    "model_dir": "runs/cpu_flows/low_resource_asr/train",
+    "n_transcribed_ok": 50,
+    "n_transcribed_fail": 0,
+    "backend_requested": "vosk_small",
+    "model_dir": "/home/code/voc_train/runs/cpu_flows/low_resource_asr/train",
     "status": "evaluated"
   },
   "paths": {
-    "train_checkpoint": "runs/cpu_flows/low_resource_asr/train/checkpoint.json",
-    "train_metrics": "runs/cpu_flows/low_resource_asr/train/train_metrics.json",
-    "evaluate_metrics": "runs/cpu_flows/low_resource_asr/evaluate/metrics.json"
+    "train_checkpoint": "/home/code/voc_train/runs/cpu_flows/low_resource_asr/train/checkpoint.json",
+    "train_metrics": "/home/code/voc_train/runs/cpu_flows/low_resource_asr/train/train_metrics.json",
+    "evaluate_metrics": "/home/code/voc_train/runs/cpu_flows/low_resource_asr/evaluate/metrics.json"
   }
 }

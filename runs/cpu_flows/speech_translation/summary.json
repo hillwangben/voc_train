@@ -1,6 +1,10 @@
 {
   "task_type": "speech_translation",
-  "backend": "cpu_reference",
+  "backend": "opus_mt_tiny",
+  "backend_candidates": [
+    "whisper_tiny_cpu",
+    "opus_mt_tiny"
+  ],
   "device": "cpu",
   "train": {
     "task_type": "speech_translation",
@@ -16,7 +20,8 @@
       "en": 50
     },
     "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
-    "backend": "cpu_reference",
+    "backend": "opus_mt_tiny",
+    "backend_requested": "opus_mt_tiny",
     "device": "cpu",
     "training_mode": "task_specific_reference_model",
     "status": "trained"
@@ -25,16 +30,21 @@
     "task_type": "speech_translation",
     "sample_count": 50,
     "channel_count": 4,
-    "bleu_proxy": 1.0,
-    "chrf_proxy": 1.0,
-    "backend": "cpu_reference",
+    "bleu_proxy": 0.0,
+    "chrf_proxy": 0.0,
+    "backend_asr": "vosk_small",
+    "backend_mt": "opus_mt_tiny",
+    "n_translated_ok": 50,
+    "n_translated_fail": 0,
+    "backend": "opus_mt_tiny",
+    "backend_requested": "opus_mt_tiny",
+    "model_dir": "/home/code/voc_train/runs/cpu_flows/speech_translation/train",
     "device": "cpu",
-    "model_dir": "runs/cpu_flows/speech_translation/train",
     "status": "evaluated"
   },
   "paths": {
-    "train_checkpoint": "runs/cpu_flows/speech_translation/train/checkpoint.json",
-    "train_metrics": "runs/cpu_flows/speech_translation/train/train_metrics.json",
-    "evaluate_metrics": "runs/cpu_flows/speech_translation/evaluate/metrics.json"
+    "train_checkpoint": "/home/code/voc_train/runs/cpu_flows/speech_translation/train/checkpoint.json",
+    "train_metrics": "/home/code/voc_train/runs/cpu_flows/speech_translation/train/train_metrics.json",
+    "evaluate_metrics": "/home/code/voc_train/runs/cpu_flows/speech_translation/evaluate/metrics.json"
   }
 }

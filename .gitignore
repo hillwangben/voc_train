@@ -39,8 +39,23 @@ env/
 
 # 大型模型权重（超过 GitHub 100MB 硬限制或 50MB 推荐限制，本地保留）
 # 如需在远端分发，请改用 Git LFS 或单独打包到 release 资源
+# 注:9 个独立 model 资产下的 model/<name>/ 是 real_cpu_models 的副本(用于独立发布),
+#     同样存在大文件,需一并忽略;权威源在 model/real_cpu_models/
+
+# 权威源中的大文件
 speech_train_preset/model/real_cpu_models/Helsinki-NLP-opus-mt-en-zh/pytorch_model.bin
 speech_train_preset/model/real_cpu_models/openai-whisper-tiny/pytorch_model.bin
 speech_train_preset/model/real_cpu_models/sentence-transformers-all-MiniLM-L6-v2/pytorch_model.bin
 speech_train_preset/model/real_cpu_models/sherpa-onnx-paraformer-zh-small-2024-03-09/model.int8.onnx
 speech_train_preset/model/real_cpu_models/speechbrain-spkrec-ecapa-voxceleb/embedding_model.ckpt
+
+# 9 个独立 model 资产下的同名大文件
+speech_train_preset/model/asr_vosk_small-cpu-model/model/asr_vosk_small/
+speech_train_preset/model/asr_sherpa_paraformer-cpu-model/model/asr_sherpa_paraformer/model.int8.onnx
+speech_train_preset/model/asr_whisper_tiny-cpu-model/model/asr_whisper_tiny/pytorch_model.bin
+speech_train_preset/model/mt_opus_mt_en_zh-cpu-model/model/mt_opus_mt_en_zh/pytorch_model.bin
+speech_train_preset/model/si_minilm_intent-cpu-model/model/si_minilm_intent/pytorch_model.bin
+speech_train_preset/model/sv_ecapa_voxceleb-cpu-model/model/sv_ecapa_voxceleb/embedding_model.ckpt
+speech_train_preset/model/ne_deepfilternet3-cpu-model/model/ne_deepfilternet3/
+speech_train_preset/model/ne_rnnoise-cpu-model/model/ne_rnnoise/
+speech_train_preset/model/sc_pycorrector-cpu-model/model/sc_pycorrector/

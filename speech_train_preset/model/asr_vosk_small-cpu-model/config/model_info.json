@@ -1,0 +1,14 @@
+{
+  "asset_name": "asr_vosk_small-cpu-model",
+  "version": "v1",
+  "task": "语音识别",
+  "task_key": "asr",
+  "device_policy": "cpu_only",
+  "source": {
+    "directory": "model/real_cpu_models/vosk-model-small-en-us-0.15",
+    "symlink": "model/asr_vosk_small-cpu-model/model/asr_vosk_small"
+  },
+  "framework": "kaldi-vosk",
+  "license": "Apache-2.0",
+  "notes": "CPU-only, offline-cache, no retraining required for inference."
+}

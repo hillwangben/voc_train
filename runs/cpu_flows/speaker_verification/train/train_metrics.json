@@ -1,6 +1,8 @@
 {
   "loss": 0.0,
   "speaker_count": 10,
+  "training_backend": "speechbrain_ecapa",
+  "training_mode": "reference_speechbrain_ecapa",
   "channel_count": 4,
   "sample_count": 50
 }

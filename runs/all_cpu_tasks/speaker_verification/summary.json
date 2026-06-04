@@ -1,6 +1,9 @@
 {
   "task_type": "speaker_verification",
-  "backend": "cpu_reference",
+  "backend": "speechbrain_ecapa",
+  "backend_candidates": [
+    "speechbrain_ecapa"
+  ],
   "device": "cpu",
   "train": {
     "task_type": "speaker_verification",
@@ -16,7 +19,8 @@
       "en": 50
     },
     "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
-    "backend": "cpu_reference",
+    "backend": "speechbrain_ecapa",
+    "backend_requested": "speechbrain_ecapa",
     "device": "cpu",
     "training_mode": "task_specific_reference_model",
     "status": "trained"
@@ -27,9 +31,10 @@
     "channel_count": 4,
     "eer_proxy": 0.0,
     "verification_accuracy": 1.0,
-    "backend": "cpu_reference",
-    "device": "cpu",
+    "backend": "speechbrain_ecapa",
+    "backend_requested": "speechbrain_ecapa",
     "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/speaker_verification/train",
+    "device": "cpu",
     "status": "evaluated"
   },
   "paths": {

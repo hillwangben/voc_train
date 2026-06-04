@@ -1,6 +1,10 @@
 {
   "task_type": "noise_enhancement",
-  "backend": "cpu_reference",
+  "backend": "rnnoise",
+  "backend_candidates": [
+    "rnnoise",
+    "deepfilternet_cpu"
+  ],
   "device": "cpu",
   "train": {
     "task_type": "noise_enhancement",
@@ -16,7 +20,8 @@
       "en": 50
     },
     "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
-    "backend": "cpu_reference",
+    "backend": "rnnoise",
+    "backend_requested": "rnnoise",
     "device": "cpu",
     "training_mode": "task_specific_reference_model",
     "status": "trained"
@@ -25,12 +30,15 @@
     "task_type": "noise_enhancement",
     "sample_count": 50,
     "channel_count": 4,
-    "snr_improvement": 1.0,
-    "pesq_proxy": 1.0,
-    "stoi_proxy": 1.0,
-    "backend": "cpu_reference",
-    "device": "cpu",
+    "snr_improvement": 3.8950000000000005,
+    "pesq_proxy": 3.5,
+    "stoi_proxy": 0.92,
+    "backend": "rnnoise",
+    "n_enhanced_ok": 50,
+    "n_enhanced_fail": 0,
+    "backend_requested": "rnnoise",
     "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/noise_enhancement/train",
+    "device": "cpu",
     "status": "evaluated"
   },
   "paths": {

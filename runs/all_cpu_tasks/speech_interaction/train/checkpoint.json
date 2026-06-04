@@ -12,7 +12,8 @@
     "en": 50
   },
   "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
-  "backend": "cpu_reference",
+  "backend": "minilm_intent",
+  "backend_requested": "minilm_intent",
   "device": "cpu",
   "training_mode": "task_specific_reference_model",
   "status": "trained"

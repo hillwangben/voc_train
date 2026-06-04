@@ -1,8 +1,21 @@
 {
   "version_info": {
+    "asset_kind": "cpu_backend_aggregator",
     "device_policy": "cpu_only",
     "default_backend": "cpu_reference",
     "open_source_backend_catalog": "docs/open_source_cpu_models.json",
+    "notes": "本资产为 9 个独立 CPU 开源 model 资产的统一入口,自身不持有具体权重。具体权重通过 model/<asset>/model/<name>/ 软链访问。",
+    "backend_assets": [
+      {"asset": "asr_whisper_tiny-cpu-model", "task": "asr", "framework": "transformers"},
+      {"asset": "asr_vosk_small-cpu-model", "task": "asr", "framework": "kaldi-vosk"},
+      {"asset": "asr_sherpa_paraformer-cpu-model", "task": "asr", "framework": "onnxruntime"},
+      {"asset": "mt_opus_mt_en_zh-cpu-model", "task": "speech_translation", "framework": "transformers"},
+      {"asset": "si_minilm_intent-cpu-model", "task": "speech_interaction", "framework": "sentence-transformers"},
+      {"asset": "sv_ecapa_voxceleb-cpu-model", "task": "speaker_verification", "framework": "speechbrain"},
+      {"asset": "ne_deepfilternet3-cpu-model", "task": "noise_enhancement", "framework": "pytorch"},
+      {"asset": "ne_rnnoise-cpu-model", "task": "noise_enhancement", "framework": "rnnoise-c"},
+      {"asset": "sc_pycorrector-cpu-model", "task": "speech_correction", "framework": "kenlm"}
+    ],
     "tasks": [
       "asr",
       "noise_enhancement",
@@ -46,48 +59,16 @@
       }
     },
     "metrics": {
-      "asr": {
-        "wer": 0.0,
-        "cer": 0.0
-      },
-      "noise_enhancement": {
-        "snr_improvement": 1.0,
-        "pesq_proxy": 1.0,
-        "stoi_proxy": 1.0
-      },
-      "cross_channel_asr": {
-        "wer": 0.0,
-        "cer": 0.0
-      },
-      "low_resource_asr": {
-        "wer": 0.0,
-        "cer": 0.0
-      },
-      "code_switch_asr": {
-        "wer": 0.0,
-        "cer": 0.0
-      },
-      "speaker_verification": {
-        "eer_proxy": 0.0,
-        "verification_accuracy": 1.0
-      },
-      "speech_interaction": {
-        "intent_accuracy": 1.0,
-        "slot_f1": 1.0
-      },
-      "speech_translation": {
-        "bleu_proxy": 1.0,
-        "chrf_proxy": 1.0
-      },
-      "transcription": {
-        "wer": 0.0,
-        "cer": 0.0
-      },
-      "speech_correction": {
-        "correction_precision": 1.0,
-        "correction_recall": 1.0,
-        "correction_f1": 1.0
-      }
+      "asr": {"wer": 0.0, "cer": 0.0},
+      "noise_enhancement": {"snr_improvement": 1.0, "pesq_proxy": 1.0, "stoi_proxy": 1.0},
+      "cross_channel_asr": {"wer": 0.0, "cer": 0.0},
+      "low_resource_asr": {"wer": 0.0, "cer": 0.0},
+      "code_switch_asr": {"wer": 0.0, "cer": 0.0},
+      "speaker_verification": {"eer_proxy": 0.0, "verification_accuracy": 1.0},
+      "speech_interaction": {"intent_accuracy": 1.0, "slot_f1": 1.0},
+      "speech_translation": {"bleu_proxy": 1.0, "chrf_proxy": 1.0},
+      "transcription": {"wer": 0.0, "cer": 0.0},
+      "speech_correction": {"correction_precision": 1.0, "correction_recall": 1.0, "correction_f1": 1.0}
     }
   }
 }

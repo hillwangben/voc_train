@@ -2,6 +2,8 @@
   "loss": 0.0,
   "wer": 0.0,
   "cer": 0.0,
+  "training_backend": "sherpa_onnx_int8",
+  "training_mode": "reference_sherpa_onnx_int8",
   "channel_count": 4,
   "sample_count": 50
 }

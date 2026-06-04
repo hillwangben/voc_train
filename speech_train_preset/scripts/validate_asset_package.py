@@ -17,14 +17,14 @@ ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_FILES = [
     "README.md",
     "PROFILE.jpg",
-    "alg/speech_train_all_in_one/INFO.ini",
-    "alg/speech_train_all_in_one/README.md",
-    "alg/speech_train_all_in_one/PROFILE.jpg",
-    "alg/speech_train_all_in_one/main/config.yaml",
-    "alg/speech_train_all_in_one/main/train.sh",
-    "alg/speech_train_all_in_one/main/eval.sh",
-    "alg/speech_train_all_in_one/main/convert.sh",
-    "alg/speech_train_all_in_one/main/service.sh",
+    "alg/speech_train_all-alg/INFO.ini",
+    "alg/speech_train_all-alg/README.md",
+    "alg/speech_train_all-alg/PROFILE.jpg",
+    "alg/speech_train_all-alg/main/config.yaml",
+    "alg/speech_train_all-alg/main/train.sh",
+    "alg/speech_train_all-alg/main/eval.sh",
+    "alg/speech_train_all-alg/main/convert.sh",
+    "alg/speech_train_all-alg/main/service.sh",
     "docs/open_source_cpu_models.json",
     "docs/开源CPU小模型选型.md",
     "docs/10个CPU流程独立测试说明.md",
@@ -64,17 +64,17 @@ REQUIRED_FILES = [
 ]
 
 INFO_FILES = [
-    "alg/speech_train_all_in_one/INFO.ini",
+    "alg/speech_train_all-alg/INFO.ini",
     "env/speech_train_all-env/INFO.ini",
     "dataset/speech_train_sample-dataset/INFO.ini",
     "model/speech_train_base-model/INFO.ini",
 ]
 
 EXECUTABLE_SCRIPTS = [
-    "alg/speech_train_all_in_one/main/train.sh",
-    "alg/speech_train_all_in_one/main/eval.sh",
-    "alg/speech_train_all_in_one/main/convert.sh",
-    "alg/speech_train_all_in_one/main/service.sh",
+    "alg/speech_train_all-alg/main/train.sh",
+    "alg/speech_train_all-alg/main/eval.sh",
+    "alg/speech_train_all-alg/main/convert.sh",
+    "alg/speech_train_all-alg/main/service.sh",
 ]
 
 
@@ -94,7 +94,7 @@ def main():
         for key in ["name", "version", "tags", "description"]:
             require(parser.has_option("base", key), f"missing {key} in {rel}")
 
-    config = yaml.safe_load((ROOT / "alg/speech_train_all_in_one/main/config.yaml").read_text(encoding="utf-8"))
+    config = yaml.safe_load((ROOT / "alg/speech_train_all-alg/main/config.yaml").read_text(encoding="utf-8"))
     for task in ["train", "evaluate", "adapt", "service"]:
         require(task in config, f"missing {task} in config.yaml")
 

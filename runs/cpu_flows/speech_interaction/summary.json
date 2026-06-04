@@ -1,6 +1,9 @@
 {
   "task_type": "speech_interaction",
-  "backend": "cpu_reference",
+  "backend": "minilm_intent",
+  "backend_candidates": [
+    "minilm_intent"
+  ],
   "device": "cpu",
   "train": {
     "task_type": "speech_interaction",
@@ -16,7 +19,8 @@
       "en": 50
     },
     "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
-    "backend": "cpu_reference",
+    "backend": "minilm_intent",
+    "backend_requested": "minilm_intent",
     "device": "cpu",
     "training_mode": "task_specific_reference_model",
     "status": "trained"
@@ -25,16 +29,21 @@
     "task_type": "speech_interaction",
     "sample_count": 50,
     "channel_count": 4,
-    "intent_accuracy": 1.0,
-    "slot_f1": 1.0,
-    "backend": "cpu_reference",
+    "intent_accuracy": 0.26,
+    "slot_f1": 0.0,
+    "backend_asr": "vosk_small",
+    "backend_intent": "minilm_intent",
+    "n_intent_ok": 50,
+    "n_intent_fail": 0,
+    "backend": "minilm_intent",
+    "backend_requested": "minilm_intent",
+    "model_dir": "/home/code/voc_train/runs/cpu_flows/speech_interaction/train",
     "device": "cpu",
-    "model_dir": "runs/cpu_flows/speech_interaction/train",
     "status": "evaluated"
   },
   "paths": {
-    "train_checkpoint": "runs/cpu_flows/speech_interaction/train/checkpoint.json",
-    "train_metrics": "runs/cpu_flows/speech_interaction/train/train_metrics.json",
-    "evaluate_metrics": "runs/cpu_flows/speech_interaction/evaluate/metrics.json"
+    "train_checkpoint": "/home/code/voc_train/runs/cpu_flows/speech_interaction/train/checkpoint.json",
+    "train_metrics": "/home/code/voc_train/runs/cpu_flows/speech_interaction/train/train_metrics.json",
+    "evaluate_metrics": "/home/code/voc_train/runs/cpu_flows/speech_interaction/evaluate/metrics.json"
   }
 }

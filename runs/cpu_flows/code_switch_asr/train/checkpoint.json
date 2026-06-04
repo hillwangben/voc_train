@@ -12,7 +12,8 @@
     "zh-en": 50
   },
   "base_model_dir": "/home/code/voc_train/speech_train_preset/model/speech_train_base-model",
-  "backend": "cpu_reference",
+  "backend": "sherpa_onnx_int8",
+  "backend_requested": "sherpa_onnx_int8",
   "device": "cpu",
   "training_mode": "task_specific_reference_model",
   "status": "trained"

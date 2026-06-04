@@ -250,17 +250,16 @@ def stage_dataset(quiet: bool = False) -> bool:
     tmpdir = Path(f"/tmp/dataset_repack_{os.getpid()}_{int(time.time())}")
     tmpdir.mkdir(parents=True, exist_ok=True)
     try:
-        # 准备 zip 根目录
-        zip_root = tmpdir / "dataset"
-        zip_root.mkdir()
-        shutil.copytree(audio_dir, zip_root / "audio", symlinks=False)
-        shutil.copytree(labels_dir, zip_root / "labels", symlinks=False)
-        shutil.copy(metadata, zip_root / "metadata.json")
+        # 准备 zip 根(不嵌入 dataset/ 前缀,zip 内直接是 audio/ labels/ metadata.json)
+        # 符合《数据集规范》要求:解压后可直接作为数据根目录使用
+        shutil.copytree(audio_dir, tmpdir / "audio", symlinks=False)
+        shutil.copytree(labels_dir, tmpdir / "labels", symlinks=False)
+        shutil.copy(metadata, tmpdir / "metadata.json")
 
         # 在 zip 根目录打 zip
         import zipfile as zf
         with zf.ZipFile(DATASET_ZIP, "w", compression=zf.ZIP_DEFLATED) as zfobj:
-            for root, _, files in os.walk(zip_root):
+            for root, _, files in os.walk(tmpdir):
                 for fname in files:
                     full = Path(root) / fname
                     rel = full.relative_to(tmpdir)

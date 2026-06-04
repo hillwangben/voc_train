@@ -32,6 +32,8 @@
     "eer_proxy": 0.0,
     "verification_accuracy": 1.0,
     "backend": "speechbrain_ecapa",
+    "n_verified_ok": 50,
+    "n_verified_fail": 0,
     "backend_requested": "speechbrain_ecapa",
     "model_dir": "/home/code/voc_train/runs/all_cpu_tasks/speaker_verification/train",
     "device": "cpu",

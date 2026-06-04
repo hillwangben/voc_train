@@ -17,6 +17,44 @@ from typing import Any, Callable, Dict, List, Optional
 
 
 # ============================================================
+# SpeechBrain 1.1.0 + torch 2.2 兼容 shim
+# SpeechBrain 1.1.0 的 autocast.py 在第 221 行调用:
+#     torch.amp.custom_fwd(fwd, device_type=device_type, cast_inputs=cast_inputs)
+# 但 torch 2.2 实际位置是 torch.cuda.amp.custom_fwd 且签名只接受 (fwd, *, cast_inputs)
+# 不支持 device_type 参数。
+# 我们在 import speechbrain 之前先把 shim 注入 torch.amp 命名空间,过滤掉 device_type。
+# ============================================================
+def _install_speechbrain_torch_shim() -> None:
+    import torch
+    if hasattr(torch.amp, "custom_fwd"):
+        return
+
+    if hasattr(torch, "cuda") and hasattr(torch.cuda.amp, "custom_fwd"):
+        _raw_cuda_custom_fwd = torch.cuda.amp.custom_fwd
+
+        def _shim_custom_fwd(fwd=None, *, device_type=None, cast_inputs=None, **kwargs):
+            """兼容 torch.amp.custom_fwd 旧调用,丢弃 device_type 关键字。"""
+            return _raw_cuda_custom_fwd(fwd, cast_inputs=cast_inputs)
+
+        def _shim_custom_bwd(fwd=None, *, device_type=None, cast_inputs=None, **kwargs):
+            """对称的 bwd 包装。"""
+            bwd_raw = getattr(torch.cuda.amp, "custom_bwd", _raw_cuda_custom_fwd)
+            return bwd_raw(fwd, cast_inputs=cast_inputs)
+
+        torch.amp.custom_fwd = _shim_custom_fwd
+        torch.amp.custom_bwd = _shim_custom_bwd
+    else:
+        # 终极 fallback:no-op 装饰器
+        def _noop_fwd(fwd=None, *, device_type=None, cast_inputs=None, **kwargs):
+            return fwd
+        torch.amp.custom_fwd = _noop_fwd
+        torch.amp.custom_bwd = _noop_fwd
+
+
+_install_speechbrain_torch_shim()
+
+
+# ============================================================
 # 路径与目录
 # ============================================================
 def _alg_root() -> Path:

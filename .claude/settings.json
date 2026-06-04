@@ -83,7 +83,14 @@
       "Bash(unzip -q vosk-model-small-en-us-0.15.zip)",
       "Bash(rm -rf model/asr_vosk_small-cpu-model/model/asr_vosk_small)",
       "Bash(mkdir -p model/asr_vosk_small-cpu-model/model/asr_vosk_small)",
-      "Bash(cp -rL model/real_cpu_models/vosk-model-small-en-us-0.15/. model/asr_vosk_small-cpu-model/model/asr_vosk_small/)"
+      "Bash(cp -rL model/real_cpu_models/vosk-model-small-en-us-0.15/. model/asr_vosk_small-cpu-model/model/asr_vosk_small/)",
+      "Bash(grep -E \"^#{1,3} \" speech_train_preset/README.md)",
+      "Bash(rm -f model/real_cpu_models/speechbrain-spkrec-ecapa-voxceleb/label_encoder.ckpt)",
+      "Bash(unzip -l dataset/speech_train_sample-dataset.zip)",
+      "Bash(unzip -l dataset/speech_train-sample-dataset.zip)",
+      "Bash(rm -rf runs/all_cpu_tasks)",
+      "Bash(python3 speech_train_preset/scripts/run_all_cpu_tasks.py)",
+      "Bash(unzip -l speech_train_sample-dataset.zip)"
     ]
   }
 }

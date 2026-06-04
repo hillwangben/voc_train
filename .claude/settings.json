@@ -90,7 +90,17 @@
       "Bash(unzip -l dataset/speech_train-sample-dataset.zip)",
       "Bash(rm -rf runs/all_cpu_tasks)",
       "Bash(python3 speech_train_preset/scripts/run_all_cpu_tasks.py)",
-      "Bash(unzip -l speech_train_sample-dataset.zip)"
+      "Bash(unzip -l speech_train_sample-dataset.zip)",
+      "Bash(grep -E \"speech_train_all-env\\\\.tar\\\\.gz$|speech_train_sample-dataset\\\\.zip$| model\\\\.zip$\")",
+      "Bash(zip -qry9 -y /home/code/voc_train/speech_train_preset.zip speech_train_preset/)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(zip -r9 -y /home/code/voc_train/speech_train_preset.zip speech_train_preset/)",
+      "Bash(grep -E \"\\(env|speech_train_all-env|model|model\\\\.zip|dataset|zip$\\)\")",
+      "Bash(grep -E \"\\(model\\\\.zip$|speech_train_all-env\\\\.tar\\\\.gz$|speech_train_sample-dataset\\\\.zip$\\)\")",
+      "Bash(awk '{sum+=$1} END {print \"三个嵌套包总大小: \" sum/1024/1024 \" MB\"}')",
+      "Bash([ -f \"$d/INFO.ini\" ])",
+      "Bash(grep -E '^\\(name|version|tags|description\\)' __TRACKED_VAR__/INFO.ini)",
+      "Bash(tar tzf *)"
     ]
   }
 }

@@ -347,15 +347,32 @@ def stage_package(quiet: bool = False) -> bool:
     else:
         info(f"覆盖 {OUTPUT_ZIP.name} ...")
 
-    # 用 zip 命令(支持 -y 保留 symlink,虽然我们已无 symlink)
-    cmd = ["zip", "-qry9", "-y", str(OUTPUT_ZIP), "speech_train_preset/"]
-    info(f"执行: {' '.join(cmd)} (在 {PRESET_PARENT})")
+    # 关键修复:zip 写入期间会读当前目录,可能把目标 zip 自身递归包含。
+    # 先写到 /tmp 临时文件,再 mv 到目标位置,避免递归。
+    tmp_zip = Path(f"/tmp/speech_train_preset_{os.getpid()}_{int(time.time())}.zip.tmp")
+    if tmp_zip.exists():
+        tmp_zip.unlink()
+
+    # 不排除任何东西,完整打包(包括 env tar.gz / dataset zip / model.zip 都是平台需要的):
+    #   - env/speech_train_all-env/speech_train_all-env.tar.gz  平台侧离线安装需要完整环境包
+    #   - dataset/speech_train_sample-dataset/speech_train_sample-dataset.zip  数据集压缩包
+    #   - model/speech_train_base-model/model.zip  规范要求的模型压缩包
+    #   - wheels/*.tar.gz  sdist,虽然 pip 主要用 .whl,保留不影响功能
+    cmd = ["zip", "-qry9", "-y", str(tmp_zip), "speech_train_preset/"]
+    info(f"执行: {' '.join(cmd)} (在 {PRESET_PARENT}, 目标 {tmp_zip})")
     result = subprocess.run(cmd, cwd=PRESET_PARENT, capture_output=True, text=True)
     if result.returncode != 0:
-        fail(f"zip 命令失败: {result.stderr}")
+        fail(f"zip 命令失败 (rc={result.returncode})")
+        if result.stderr:
+            fail(f"stderr: {result.stderr}")
+        if tmp_zip.exists():
+            tmp_zip.unlink()
         return False
 
-    # 验证 zip 无 symlink(用 unix 命令 `unzip -l` 检查 " -> ")
+    # 移动到目标位置
+    shutil.move(str(tmp_zip), str(OUTPUT_ZIP))
+
+    # 验证 zip 无 symlink
     result = subprocess.run(
         ["unzip", "-l", str(OUTPUT_ZIP)],
         capture_output=True,
@@ -363,12 +380,48 @@ def stage_package(quiet: bool = False) -> bool:
     )
     symlink_count = sum(1 for line in result.stdout.splitlines() if " -> " in line)
 
+    # 统计 zip 内的关键嵌套包(env tar.gz / dataset zip / model.zip)
+    env_tar = sum(1 for line in result.stdout.splitlines() if "speech_train_all-env.tar.gz" in line and "wheels/" not in line)
+    dataset_zip = sum(1 for line in result.stdout.splitlines() if "speech_train_sample-dataset.zip" in line and "wheels/" not in line)
+    model_zip = sum(1 for line in result.stdout.splitlines() if line.endswith(" model.zip") and "wheels/" not in line)
+
     size = OUTPUT_ZIP.stat().st_size
     ok(f"总 zip 重新打包完成: {OUTPUT_ZIP.name} ({fmt_size(size)})")
     if symlink_count == 0:
         info("zip 中 0 个 symlink ✅")
     else:
         warn(f"zip 中检测到 {symlink_count} 个 symlink")
+
+    info(f"嵌套包清单(平台需要):")
+    info(f"  env tar.gz  : {env_tar} 个(离线环境包)")
+    info(f"  dataset zip : {dataset_zip} 个(数据集压缩包)")
+    info(f"  model zip   : {model_zip} 个(基础模型压缩包)")
+    return True
+
+    # 验证 zip 无 symlink
+    result = subprocess.run(
+        ["unzip", "-l", str(OUTPUT_ZIP)],
+        capture_output=True,
+        text=True,
+    )
+    symlink_count = sum(1 for line in result.stdout.splitlines() if " -> " in line)
+
+    # 统计 zip 内的关键嵌套包(env tar.gz / dataset zip / model.zip)
+    env_tar = sum(1 for line in result.stdout.splitlines() if "speech_train_all-env.tar.gz" in line and "wheels/" not in line)
+    dataset_zip = sum(1 for line in result.stdout.splitlines() if "speech_train_sample-dataset.zip" in line and "wheels/" not in line)
+    model_zip = sum(1 for line in result.stdout.splitlines() if line.endswith("model.zip") and "wheels/" not in line)
+
+    size = OUTPUT_ZIP.stat().st_size
+    ok(f"总 zip 重新打包完成: {OUTPUT_ZIP.name} ({fmt_size(size)})")
+    if symlink_count == 0:
+        info("zip 中 0 个 symlink ✅")
+    else:
+        warn(f"zip 中检测到 {symlink_count} 个 symlink")
+
+    info(f"嵌套包清单(平台需要):")
+    info(f"  env tar.gz  : {env_tar} 个(离线环境包)")
+    info(f"  dataset zip : {dataset_zip} 个(数据集压缩包)")
+    info(f"  model zip   : {model_zip} 个(基础模型压缩包)")
     return True
 
 

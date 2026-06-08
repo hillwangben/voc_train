@@ -1,0 +1,9 @@
+{
+  "loss": 0.0,
+  "wer": 0.0,
+  "cer": 0.0,
+  "training_backend": "vosk_small",
+  "training_mode": "reference_vosk_small",
+  "channel_count": 4,
+  "sample_count": 50
+}

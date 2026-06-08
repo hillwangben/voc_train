@@ -1,0 +1,36 @@
+{
+  "task_type": "asr",
+  "sample_count": 50,
+  "channel_count": 4,
+  "wer": 1.0,
+  "cer": 1.0,
+  "channel_metrics": {
+    "mic_1": {
+      "sample_count": 12,
+      "wer": 1.0,
+      "cer": 1.0
+    },
+    "mic_2": {
+      "sample_count": 13,
+      "wer": 1.0,
+      "cer": 1.0
+    },
+    "mic_3": {
+      "sample_count": 13,
+      "wer": 1.0,
+      "cer": 1.0
+    },
+    "mic_4": {
+      "sample_count": 12,
+      "wer": 1.0,
+      "cer": 1.0
+    }
+  },
+  "backend": "vosk_small",
+  "device": "cpu",
+  "n_transcribed_ok": 50,
+  "n_transcribed_fail": 0,
+  "backend_requested": "vosk_small",
+  "model_dir": "/workspace/model",
+  "status": "evaluated"
+}

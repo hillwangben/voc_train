@@ -1,0 +1,1 @@
+{"kind": "metrics", "stage": "evaluate", "ts": 1780901593812, "metrics": {"wer": 1.0, "cer": 1.0}, "extra": {"task_type": "asr", "backend": "vosk_small"}}
